@@ -1,0 +1,10 @@
+@reference "@/tailwind.css";
+*::selection {
+    background-color: #84848480;
+    /*color: #151515;*/
+}
+
+html {
+    font-size: 18px;
+    @apply bg-theme-primary text-theme-primary-50;
+}

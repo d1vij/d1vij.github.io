@@ -1,0 +1,29 @@
+.backdrop {
+    position: absolute;
+
+    inset: 0;
+    max-height: calc(100dvh / 2);
+    flex-grow: 1;
+    width: 100%;
+    z-index: 2;
+    background-color: #35353590;
+
+    filter: blur(2px);
+
+    --r1: 40px;
+    --r2: 65px;
+
+    background-image:
+        radial-gradient(circle at bottom left, #2d2d2d, transparent),
+        repeating-radial-gradient(
+            ellipse at top left,
+            #2d2d2d,
+            #2d2d2d,
+            10px,
+            transparent var(--r1),
+            transparent var(--r2)
+        );
+
+    background-blend-mode: multiply;
+    /*box-shadow: inset 0px 0px 22px 0px rgba(0, 0, 0, 1);*/
+}

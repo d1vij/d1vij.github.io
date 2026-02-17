@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&display=swap");
+/*@import url("https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap");*/
+@import "tailwindcss";
+
+@theme {
+    --color-primary: #f00;
+    /*--font-primary: "Geist Mono";*/
+    --font-primary: "Cascadia Code";
+    --default-font-family: var(--font-primary);
+
+    --color-theme-primary: #151515;
+    --color-theme-primary-50: #f7f7f7;
+    --color-theme-primary-100: #f0f0f0;
+    --color-theme-primary-200: #dbdbdb;
+    --color-theme-primary-300: #c4c4c4;
+    --color-theme-primary-400: #a8a8a8;
+    --color-theme-primary-500: #8c8c8c;
+    --color-theme-primary-600: #737373;
+    --color-theme-primary-700: #5e5e5e;
+    --color-theme-primary-800: #454545;
+    --color-theme-primary-900: #333333;
+    --color-theme-primary-950: #1f1f1f;
+}
