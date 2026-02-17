@@ -5,16 +5,15 @@ export const Route = createFileRoute("/")({ component: App });
 import styles from "./homepage.module.css";
 import ContactList from "@/components/ContactList";
 import PrimaryText from "@/components/PrimaryText";
-import SkewmorphicButton from "@/components/SkewmorphicButton";
 import { contacts } from "@/content/data";
-import { Link } from "@tanstack/react-router";
+import LinkWrapper from "@/components/LinkWrapper";
 
 function App() {
     return (
         <main className="relative z-20 flex flex-col bg-transparent">
             <div className="relative grow p-5 md:p-10">
                 <div className={styles.backdrop}></div>
-                <section className="relative z-20 flex w-fit flex-col items-baseline">
+                <section className="relative z-20 flex lg:w-1/2 md:w-[80%] md:mx-auto flex-col items-baseline">
                     <h1 className="font-semibold text-8xl leading-tight tracking-tight md:text-9xl">
                         Divij Verma
                     </h1>
@@ -25,7 +24,7 @@ function App() {
                 </section>
             </div>
 
-            <div className="p-5">
+            <div className="p-5 lg:w-[50%] md:w-[80%] mx-auto">
                 <section className="mt-10 md:mt-20 md:text-xl">
                     <PrimaryText>
                         Majorly working with web technologies and python along
@@ -35,10 +34,13 @@ function App() {
                     <ContactList contacts={contacts} />
                 </section>
 
-                <section className="justify-baseline mt-12 flex w-full bg-theme-primary md:px-5">
-                    <Link to="/projects">
-                        <SkewmorphicButton>View Projects</SkewmorphicButton>
-                    </Link>
+                <section className="justify-baseline mt-12 w-fit bg-theme-primary grid grid-cols-2">
+                    <LinkWrapper to={"/projects"}>
+                        Projects
+                    </LinkWrapper>
+                    <LinkWrapper to={"/work"}>
+                        Work Experience
+                    </LinkWrapper>
                 </section>
             </div>
         </main>

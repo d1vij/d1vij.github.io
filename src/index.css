@@ -1,4 +1,6 @@
 @reference "@/tailwind.css";
+
+/* biome-ignore lint/correctness/noUnknownPseudoElement: . */
 *::selection {
     background-color: #84848480;
     /*color: #151515;*/

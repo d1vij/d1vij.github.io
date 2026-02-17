@@ -1,0 +1,17 @@
+{
+  "lsp": {
+    "json-language-server": {
+      "settings": {
+        "json": {
+          "schemas": [
+            // {
+            //   "fileMatch": ["public/project_previews.json"],
+            //   // BUG: Zed ignores relative paths in settings.json
+            //   "url": "/home/divij/coding/projects/d1vij-website-router-final/public/project_previews.schema.json",
+            // },
+          ],
+        },
+      },
+    },
+  },
+}
