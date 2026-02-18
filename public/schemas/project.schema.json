@@ -1,0 +1,119 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+        "$schema": {
+            "type": "string"
+        },
+        "title": {
+            "type": "string",
+            "minLength": 1
+        },
+        "images": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "title": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "url": {
+                        "type": "string",
+                        "pattern": "^\\/(?:[a-zA-Z0-9_-]+\\/)*[a-zA-Z0-9_-]+\\.(png|jpeg|jpg|webp)$"
+                    }
+                },
+                "required": [
+                    "title",
+                    "url"
+                ],
+                "additionalProperties": false
+            }
+        },
+        "links": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "for": {
+                        "type": "string",
+                        "enum": [
+                            "github",
+                            "website"
+                        ]
+                    },
+                    "url": {
+                        "type": "string",
+                        "format": "uri"
+                    }
+                },
+                "required": [
+                    "for",
+                    "url"
+                ],
+                "additionalProperties": false
+            }
+        },
+        "stack": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "section": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "used": {
+                        "type": "array",
+                        "items": {
+                            "anyOf": [
+                                {
+                                    "type": "string",
+                                    "pattern": "^\\*.*"
+                                },
+                                {
+                                    "type": "string",
+                                    "enum": [
+                                        "React",
+                                        "TailwindCSS",
+                                        "TypeScript",
+                                        "Express",
+                                        "HTML",
+                                        "SCSS",
+                                        "Python",
+                                        "FastApi",
+                                        "Pandas",
+                                        "Numpy",
+                                        "Jupyter",
+                                        "Docker",
+                                        "MongoDB"
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                },
+                "required": [
+                    "section",
+                    "used"
+                ],
+                "additionalProperties": false
+            }
+        },
+        "text": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "minLength": 1
+            }
+        }
+    },
+    "required": [
+        "title",
+        "images",
+        "links",
+        "stack",
+        "text"
+    ],
+    "additionalProperties": false
+}

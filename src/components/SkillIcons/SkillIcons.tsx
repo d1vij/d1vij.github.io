@@ -1,18 +1,16 @@
 import skills, { UnknownSkillSchema } from "@/content/skills";
 type SkillIconProps = {
-    skill: string ;
+    skill: string;
 };
 
-function EmptyIcon(_: { className: string }) {
-
-}
+function EmptyIcon(_: { className: string }) {}
 
 export default function SkillIcons({ skill }: SkillIconProps) {
     let Icon;
     // TODO: Maybe fix this logic, atp just hope that the json is correct
     if (UnknownSkillSchema.safeParse(skill).success) {
-        Icon = EmptyIcon
-        skill = skill.slice(1)
+        Icon = EmptyIcon;
+        skill = skill.slice(1);
     } else {
         //@ts-ignore
         Icon = skills[skill];

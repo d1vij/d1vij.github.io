@@ -25,15 +25,10 @@
                             "type": "object",
                             "properties": {
                                 "for": {
-                                    "anyOf": [
-                                        {
-                                            "type": "string",
-                                            "const": "github"
-                                        },
-                                        {
-                                            "type": "string",
-                                            "const": "website"
-                                        }
+                                    "type": "string",
+                                    "enum": [
+                                        "github",
+                                        "website"
                                     ]
                                 },
                                 "url": {

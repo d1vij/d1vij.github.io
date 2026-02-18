@@ -6,8 +6,8 @@ const ContactSchema = z.object({
     id: z.string(),
     content: z.string(),
     href: z.url(),
-    icon: z.custom<Icon>()
-})
+    icon: z.custom<Icon>(),
+});
 export type Contact = z.infer<typeof ContactSchema>;
 type ContactListProps = {
     contacts: Contact[];

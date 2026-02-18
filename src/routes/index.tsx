@@ -5,10 +5,10 @@ export const Route = createFileRoute("/")({
     head: () => ({
         meta: [
             {
-                title:"Divij Verma"
-            }
-        ]
-    })
+                title: "Divij Verma",
+            },
+        ],
+    }),
 });
 
 import styles from "./homepage.module.css";
@@ -36,7 +36,8 @@ function App() {
             <div className="p-5 lg:w-[50%] md:w-[80%] mx-auto">
                 <section className="mt-10 md:mt-20 md:text-xl">
                     <PrimaryText>
-                        I mostly work with web technologies and python and am currently learning C and Go.
+                        I mostly work with web technologies and python and am
+                        currently learning C and Go.
                     </PrimaryText>
                     <PrimaryText>
                         Majorly working with web technologies and python along
@@ -47,12 +48,8 @@ function App() {
                 </section>
 
                 <section className="justify-baseline mt-12 w-fit bg-theme-primary grid grid-cols-2">
-                    <LinkWrapper to={"/projects"}>
-                        Projects
-                    </LinkWrapper>
-                    <LinkWrapper to={"/work"}>
-                        Work Experience
-                    </LinkWrapper>
+                    <LinkWrapper to={"/projects"}>Projects</LinkWrapper>
+                    <LinkWrapper to={"/work"}>Work Experience</LinkWrapper>
                 </section>
             </div>
         </main>

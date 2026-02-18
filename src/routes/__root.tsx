@@ -9,12 +9,12 @@ export const Route = createRootRoute({
     component: RootComponent,
     head: () => ({
         links: [
-            {
-                "rel": "icon",
-                href:"/asterisk.svg"
-            }
-        ]
-    })
+            // {
+            //     "rel": "icon",
+            //     href:"/asterisk.svg"
+            // }
+        ],
+    }),
 });
 
 function RootComponent() {
@@ -24,7 +24,7 @@ function RootComponent() {
             <div className="grow">
                 <Outlet />
             </div>
-            <footer className="left-0 z-20 mt-20 mb-2 w-full text-center text-sm decoration-2 brightness-50">
+            <footer className="left-0 z-20 mb-2 w-full text-center text-sm decoration-2 brightness-50">
                 <a
                     href="https://github.com/d1vij/d1vij"
                     target="_blank"

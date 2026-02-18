@@ -1,32 +1,32 @@
 import { z } from "zod";
 import { createFileRoute } from "@tanstack/react-router";
-import { Activity, useState } from "react";
 
-import validProjects from "@/assets/valid_projects.json"
-
-const schema = z.object({
-    slug: z
-        .string()
-        .min(3)
-        .toLowerCase()
-});
+import Project from "@/components/Project";
+import { ProjectSchema } from "@/components/Project";
 
 export const Route = createFileRoute("/projects/$projectId")({
     component: RouteComponent,
     params: {
-        parse: (params) => schema.parse(params),
+        parse: (raw) => ({
+            projectId: z.coerce
+                .string()
+                .toLowerCase()
+                .transform((s) => s.replaceAll(" ", "-"))
+                .parse(raw.projectId),
+        }),
     },
-    loader: ({ params }) => fetch("/")
+    loader: async ({ params }) => {
+        const response = await fetch(`/projects/${params.projectId}.json`);
+        const json = await response.json();
+        return ProjectSchema.parse(json);
+    },
 });
 
-
 function RouteComponent() {
-    const { slug } = Route.useParams();
-    const data = Route.useLoaderData()
+    const schema = Route.useLoaderData();
     return (
-        <div>
-            {data}
-            {slug}
-        </div>
-    )
+        <section className="p-5 flex size-full">
+            <Project {...schema} />
+        </section>
+    );
 }

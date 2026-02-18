@@ -1,6 +1,7 @@
 import { z } from "zod";
 import path from "node:path";
 import { ProjectsJsonSchema } from "./components/ProjectPreview";
+import { ProjectSchema } from "./components/Project";
 
 async function saveSchema(schema: z.ZodObject, path: string) {
     await Bun.write(
@@ -27,5 +28,10 @@ async function saveSchema(schema: z.ZodObject, path: string) {
 
 await saveSchema(
     ProjectsJsonSchema,
-    path.join(__dirname, "../public/project_previews.schema.json"),
+    path.join(__dirname, "../public/schemas/project_previews.schema.json"),
+);
+
+await saveSchema(
+    ProjectSchema,
+    path.join(__dirname, "../public/schemas/project.schema.json"),
 );

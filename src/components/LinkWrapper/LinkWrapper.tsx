@@ -1,5 +1,5 @@
 import { useVibrate } from "@/hooks";
-import { Link, type LinkProps} from "@tanstack/react-router";
+import { Link, type LinkProps } from "@tanstack/react-router";
 
 export default function LinkWrapper(props: LinkProps) {
     const vibrator = useVibrate();
