@@ -1,0 +1,94 @@
+{
+    "$schema": "./schemas/project_previews.schema.json",
+    "projects": [
+        {
+            "id": "spotify-data-analysis",
+            "links": [
+                {
+                    "for": "github",
+                    "url": "http://github.com/d1vij/spotify-data-analysis"
+                },
+                {
+                    "for": "website",
+                    "url": "https://d1vij.github.io/spotify-data-analysis/"
+                }
+            ],
+            "title": "Spotify Data Analysis",
+            "description": "A quantitative analysis of spotify listening history using pandas and matplotlib for data visualizations",
+            "skills": [
+                "Python",
+                "Pandas",
+                "Numpy",
+                "*Matplotlib",
+                "*Seaborn",
+                "Jupyter",
+                "*FizzBuzz"
+            ]
+        },
+        {
+            "id": "election-software",
+            "title": "Election Software",
+            "description": "A fullstack application for secure vote ",
+            "skills": [
+                "FastApi",
+                "Express",
+                "TypeScript",
+                "Python",
+                "*Matplotlib",
+                "*Seaborn",
+                "Docker",
+                "MongoDB"
+            ],
+            "links": [
+                {
+                    "for": "github",
+                    "url": "https://github.com/d1vij/electionsoftware"
+                }
+            ]
+        },
+        {
+            "id": "browsersh",
+            "title": "BrowserSH",
+            "description": "",
+            "skills": ["TypeScript", "HTML", "SCSS"],
+            "links": [
+                {
+                    "for": "github",
+                    "url": "https://github.com/d1vij/BrowserSH"
+                },
+                {
+                    "for": "website",
+                    "url": "https://d1vij.github.io/BrowserSH/"
+                }
+            ]
+        },
+        {
+            "id": "bad-ui-battles",
+            "title": "Bad UI Battles",
+            "description": "A",
+            "skills": ["React", "TailwindCSS", "TypeScript", "SCSS"],
+            "links": [
+                {
+                    "for": "github",
+                    "url": "https://github.com/d1vij/bad-ui-battles"
+                },
+                {
+                    "for": "website",
+                    "url": "https://d1vij.github.io/bad-ui-battles/"
+                }
+            ]
+        },
+        {
+            "id": "portfolio-website",
+            "title": "Portfolio Website",
+            "description": "",
+            "skills": ["React", "TailwindCSS", "TypeScript", "*TanstackRouter"],
+            "links": [
+                {
+                    "for": "github",
+                    "url": "https://github.com/d1vij/d1vij/tree/website"
+                }
+            ]
+        }
+    ]
+}

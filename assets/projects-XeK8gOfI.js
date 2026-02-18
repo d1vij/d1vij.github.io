@@ -1,0 +1,2 @@
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/projects-B4qL1uGc.js","assets/hooks-BRD1Njuw.js","assets/react-DiiDXuaL.js","assets/ProjectPreview-BzRLwZ9k.js"])))=>i.map(i=>d[i]);
+import{l as e}from"./hooks-BRD1Njuw.js";import{a as t,o as n,r}from"./ProjectPreview-BzRLwZ9k.js";const i=n(`/projects/`)({component:t(()=>e(()=>import(`./projects-B4qL1uGc.js`),__vite__mapDeps([0,1,2,3])),`component`),head:()=>({meta:[{title:`Projects`}]}),loader:async()=>{let e=await(await fetch(`/project_previews.json`)).json();return r.parse(e).projects}});export{i as t};
