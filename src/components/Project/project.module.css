@@ -1,0 +1,14 @@
+.projectImage {
+    transition: transform 100ms ease;
+    outline: solid transparent 1px;
+
+    filter: blur(4px);
+
+    &:has(input:checked) {
+        filter: none;
+
+        position: absolute;
+        transform: translate(0%, 0%) rotate(0);
+        z-index: 1000;
+    }
+}
