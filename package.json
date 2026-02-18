@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "format": "biome format --write src/",
     "lint": "biome lint",
-    "lint:fix": "biome lint --write --unsafe"
+    "lint:fix": "biome lint --write --unsafe",
+    "generate:schemas": "bun run src/generate_schema.ts"
   },
   "dependencies": {
     "@tanstack/react-router": "^1.160.0",

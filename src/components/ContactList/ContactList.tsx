@@ -26,7 +26,7 @@ export default function ContactList({ contacts }: ContactListProps) {
                 href={c.href}
                 target="_blank"
                 onClick={() => vibrator(50)}
-                className={`decoration-2 hover:underline active:underline text-theme-primary-400`}
+                className={`decoration-2 hover:underline active:underline text-theme-primary-400 hover:text-theme-primary-200`}
             >
                 {c.content}
             </a>

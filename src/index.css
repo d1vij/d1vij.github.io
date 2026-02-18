@@ -2,7 +2,7 @@
 
 /* biome-ignore lint/correctness/noUnknownPseudoElement: . */
 *::selection {
-    background-color: #84848480;
+    @apply bg-theme-primary-500/40;
     /*color: #151515;*/
 }
 

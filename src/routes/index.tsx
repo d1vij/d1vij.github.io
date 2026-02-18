@@ -1,6 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-export const Route = createFileRoute("/")({ component: App });
+export const Route = createFileRoute("/")({
+    component: App,
+    head: () => ({
+        meta: [
+            {
+                title:"Divij Verma"
+            }
+        ]
+    })
+});
 
 import styles from "./homepage.module.css";
 import ContactList from "@/components/ContactList";
@@ -18,7 +27,7 @@ function App() {
                         Divij Verma
                     </h1>
 
-                    <h6 className="w-full px-4 text-secondary text-sm italic md:px-8 md:text-base">
+                    <h6 className="w-full px-4 text-secondary text-sm italic md:px-8 md:text-base text-theme-primary-400">
                         Student, Developer
                     </h6>
                 </section>
@@ -26,6 +35,9 @@ function App() {
 
             <div className="p-5 lg:w-[50%] md:w-[80%] mx-auto">
                 <section className="mt-10 md:mt-20 md:text-xl">
+                    <PrimaryText>
+                        I mostly work with web technologies and python and am currently learning C and Go.
+                    </PrimaryText>
                     <PrimaryText>
                         Majorly working with web technologies and python along
                         with occasional C and Go,

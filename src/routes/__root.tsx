@@ -7,6 +7,14 @@ import {
 
 export const Route = createRootRoute({
     component: RootComponent,
+    head: () => ({
+        links: [
+            {
+                "rel": "icon",
+                href:"/asterisk.svg"
+            }
+        ]
+    })
 });
 
 function RootComponent() {

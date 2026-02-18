@@ -1,63 +1,96 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "type": "object",
-  "properties": {
-    "$schema": {
-      "type": "string"
-    },
-    "projects": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "id": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+        "$schema": {
             "type": "string"
-          },
-          "title": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          },
-          "links": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "for": {
-                  "anyOf": [
-                    {
-                      "type": "string",
-                      "const": "github"
-                    },
-                    {
-                      "type": "string",
-                      "const": "website"
-                    }
-                  ]
-                },
-                "url": {
-                  "type": "string",
-                  "format": "uri"
-                }
-              },
-              "required": ["for", "url"],
-              "additionalProperties": false
-            }
-          },
-          "skills": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "enum": ["React", "TailwindCSS", "Python"]
-            }
-          }
         },
-        "required": ["id", "title", "description", "links", "skills"],
-        "additionalProperties": false
-      }
-    }
-  },
-  "required": ["projects"],
-  "additionalProperties": false
+        "projects": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "links": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "for": {
+                                    "anyOf": [
+                                        {
+                                            "type": "string",
+                                            "const": "github"
+                                        },
+                                        {
+                                            "type": "string",
+                                            "const": "website"
+                                        }
+                                    ]
+                                },
+                                "url": {
+                                    "type": "string",
+                                    "format": "uri"
+                                }
+                            },
+                            "required": [
+                                "for",
+                                "url"
+                            ],
+                            "additionalProperties": false
+                        }
+                    },
+                    "skills": {
+                        "type": "array",
+                        "items": {
+                            "anyOf": [
+                                {
+                                    "type": "string",
+                                    "pattern": "^\\*.*"
+                                },
+                                {
+                                    "type": "string",
+                                    "enum": [
+                                        "React",
+                                        "TailwindCSS",
+                                        "TypeScript",
+                                        "Express",
+                                        "HTML",
+                                        "SCSS",
+                                        "Python",
+                                        "FastApi",
+                                        "Pandas",
+                                        "Numpy",
+                                        "Jupyter",
+                                        "Docker",
+                                        "MongoDB"
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                },
+                "required": [
+                    "id",
+                    "title",
+                    "description",
+                    "links",
+                    "skills"
+                ],
+                "additionalProperties": false
+            }
+        }
+    },
+    "required": [
+        "projects"
+    ],
+    "additionalProperties": false
 }
