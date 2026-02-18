@@ -25,7 +25,7 @@ export const Route = createFileRoute("/projects/$projectId")({
 function RouteComponent() {
     const schema = Route.useLoaderData();
     return (
-        <section className="p-5 flex size-full">
+        <section className="flex size-full p-5">
             <Project {...schema} />
         </section>
     );

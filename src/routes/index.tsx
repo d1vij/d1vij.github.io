@@ -22,18 +22,18 @@ function App() {
         <main className="relative z-20 flex flex-col bg-transparent">
             <div className="relative grow p-5 md:p-10">
                 <div className={styles.backdrop}></div>
-                <section className="relative z-20 flex lg:w-1/2 md:w-[80%] md:mx-auto flex-col items-baseline">
+                <section className="relative z-20 flex flex-col items-baseline md:mx-auto md:w-[80%] lg:w-1/2">
                     <h1 className="font-semibold text-8xl leading-tight tracking-tight md:text-9xl">
                         Divij Verma
                     </h1>
 
-                    <h6 className="w-full px-4 text-secondary text-sm italic md:px-8 md:text-base text-theme-primary-400">
+                    <h6 className="w-full px-4 text-secondary text-sm text-theme-primary-400 italic md:px-8 md:text-base">
                         Student, Developer
                     </h6>
                 </section>
             </div>
 
-            <div className="p-5 lg:w-[50%] md:w-[80%] mx-auto">
+            <div className="mx-auto p-5 md:w-[80%] lg:w-[50%]">
                 <section className="mt-10 md:mt-20 md:text-xl">
                     <PrimaryText>
                         I mostly work with web technologies and python and am
@@ -47,7 +47,7 @@ function App() {
                     <ContactList contacts={contacts} />
                 </section>
 
-                <section className="justify-baseline mt-12 w-fit bg-theme-primary grid grid-cols-2">
+                <section className="justify-baseline mt-12 grid w-fit grid-cols-2 bg-theme-primary">
                     <LinkWrapper to={"/projects"}>Projects</LinkWrapper>
                     {/*<LinkWrapper to={"/work"}>Work Experience</LinkWrapper>*/}
                 </section>

@@ -38,20 +38,20 @@ export default function ProjectPreview(props: ProjectPreviewProps) {
     const skillIcons = skills.map((s) => <SkillIcons key={s} skill={s} />);
     const linkIcons = links.map((l) => <LinkIcon key={l.for} {...l} />);
     return (
-        <div className="border-2 md:border-y-2 border-x-0 border-y-theme-primary-900 p-2 md:p-4 flex gap-1 justify-between ">
+        <div className="flex justify-between gap-1 border-2 border-x-0 border-y-theme-primary-900 p-2 md:border-y-2 md:p-4">
             {/* links */}
             <div className="">
                 <Link
-                    className="mb-2 font-semibold text-2xl md:text-3xl decoration-theme-primary-400 underline decoration-dotted hover:decoration-solid"
+                    className="mb-2 font-semibold text-2xl underline decoration-theme-primary-400 decoration-dotted hover:decoration-solid md:text-3xl"
                     to={`/projects/$projectId`}
                     params={{projectId: id}}
                 >
                     {title}
                 </Link>
-                <p className="mb-2 md:mb-3 text-sm md:text-base text-theme-primary-400">
+                <p className="mb-2 text-sm text-theme-primary-400 md:mb-3 md:text-base">
                     {description}
                 </p>
-                <div className="flex gap-1 md:gap-2 flex-wrap">
+                <div className="flex flex-wrap gap-1 md:gap-2">
                     {skillIcons}
                 </div>
             </div>
@@ -85,7 +85,7 @@ function LinkIcon(props: LinkProps) {
             onClick={handleClick}
             href={props.url}
             target="_blank"
-            className="px-1 cursor-pointer"
+            className="cursor-pointer px-1"
         >
             <Icon className="size-4.5 stroke-theme-primary-400" />
         </a>

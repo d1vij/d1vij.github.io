@@ -37,7 +37,7 @@ export default function Project({
 }: ProjectProps) {
     console.log(title);
     return (
-        <div className="border-2 border-theme-primary-900 size-full grow p-2">
+        <div className="size-full grow border-2 border-theme-primary-900 p-2">
             <div className="">
                 <h1 className="text-5xl">{title}</h1>
                 <ProjectImages images={images} />
@@ -60,18 +60,19 @@ type ProjectImageProps = z.infer<typeof ProjectImageSchema> & {
 function ProjectImage({ title, url, z, zMax }: ProjectImageProps) {
     const [isFocused, setIsFocused] = useState(false);
     function handleFocus(_: React.FocusEvent<HTMLButtonElement>) {
-        setIsFocused(true)
+        setIsFocused(true);
     }
     function handleBlur(_: React.FocusEvent<HTMLButtonElement>) {
-        setIsFocused(false)
+        setIsFocused(false);
     }
     return (
         <button
+            type="button"
             onFocus={handleFocus}
             onBlur={handleBlur}
             style={{
                 zIndex: isFocused ? zMax : z,
-                translate: `${10 * z}px`
+                translate: `${10 * z}px`,
             }}
             className="absolute aspect-auto h-full"
         >
@@ -79,7 +80,7 @@ function ProjectImage({ title, url, z, zMax }: ProjectImageProps) {
                 alt={title}
                 src={url}
                 loading="lazy"
-                className="bg-red-300 aspect-auto h-full m-2 outline-red-300 outline-2 "
+                className="m-2 aspect-auto h-full bg-red-300 outline-2 outline-red-300"
             />
         </button>
     );
@@ -102,7 +103,7 @@ function ProjectImages({ images }: ProjectImagesProps) {
         );
     }
     return (
-        <section className="bg-white aspect-video w-full relative md:w-20">
+        <section className="relative aspect-video w-full bg-white md:w-20">
             {imageElms}
         </section>
     );

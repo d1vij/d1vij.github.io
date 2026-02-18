@@ -21,12 +21,12 @@ export default function ContactList({ contacts }: ContactListProps) {
             key={c.id}
             className="justify-baseline flex items-center gap-2 text-md"
         >
-            <c.icon className="size-4 md:size-6 stroke-theme-primary-400 fill-theme-primary-400" />
+            <c.icon className="size-4 fill-theme-primary-400 stroke-theme-primary-400 md:size-6" />
             <a
                 href={c.href}
                 target="_blank"
                 onClick={() => vibrator(50)}
-                className={`decoration-2 hover:underline active:underline text-theme-primary-400 hover:text-theme-primary-200`}
+                className={`text-theme-primary-400 decoration-2 hover:text-theme-primary-200 hover:underline active:underline`}
             >
                 {c.content}
             </a>

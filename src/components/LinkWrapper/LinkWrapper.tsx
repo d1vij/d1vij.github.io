@@ -10,7 +10,7 @@ export default function LinkWrapper(props: LinkProps) {
     return (
         <Link
             onClick={handleClick}
-            className="cursor-pointer flex justify-center items-center md:text-xl text-center border-theme-primary-800/80 p-1 decoration-2 decoration-dotted underline hover:decoration-solid decoration-theme-primary-300"
+            className="flex cursor-pointer items-center justify-center border-theme-primary-800/80 p-1 text-center underline decoration-2 decoration-theme-primary-300 decoration-dotted hover:decoration-solid md:text-xl"
             {...props}
         />
     );

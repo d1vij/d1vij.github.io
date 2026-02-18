@@ -23,15 +23,15 @@ function RouteComponent() {
         <ProjectPreview key={p.id} {...p} />
     ));
     return (
-        <div className="p-5 md:pt-10 relative overflow-clip contain-content">
-            <div className="grid grid-cols-1 gap-5 border-2 md:border-x-2 border-x-theme-primary-900 border-y-0 md:w-[80%] lg:w-[50%] mx-auto mb-7">
+        <div className="relative overflow-clip p-5 contain-content md:pt-10">
+            <div className="mx-auto mb-7 grid grid-cols-1 gap-5 border-2 border-x-theme-primary-900 border-y-0 md:w-[80%] md:border-x-2 lg:w-[50%]">
                 {projectElms}
             </div>
-            <span className="text-center w-full mx-auto absolute bottom-0 left-0">
+            <span className="absolute bottom-0 left-0 mx-auto w-full text-center">
                 <a
                     href="https://github.com/d1vij?tab=repositories"
                     target="_blank"
-                    className="text-sm underline decoration-2 decoration-dotted hover:decoration-solid "
+                    className="text-sm underline decoration-2 decoration-dotted hover:decoration-solid" rel="noopener"
                 >
                     see more
                 </a>
