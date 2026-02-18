@@ -43,7 +43,8 @@ export default function ProjectPreview(props: ProjectPreviewProps) {
             <div className="">
                 <Link
                     className="mb-2 font-semibold text-2xl md:text-3xl decoration-theme-primary-400 underline decoration-dotted hover:decoration-solid"
-                    to={`/projects/${id}`}
+                    to={`/projects/$projectId`}
+                    params={{projectId: id}}
                 >
                     {title}
                 </Link>

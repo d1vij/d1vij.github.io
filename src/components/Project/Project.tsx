@@ -2,7 +2,7 @@ import { z } from "zod";
 
 import { LinkIconSchema } from "@/components/ProjectPreview";
 import { ValidSkillsSchema } from "@/content/skills";
-import { useMemo, useState } from "react";
+import { useState } from "react";
 
 export const ProjectSchema = z.object({
     title: z.string().min(1),
@@ -30,10 +30,10 @@ type ProjectProps = z.infer<typeof ProjectSchema>;
 
 export default function Project({
     title,
-    text,
+    // text,
     images,
-    links,
-    stack,
+    // links,
+    // stack,
 }: ProjectProps) {
     console.log(title);
     return (

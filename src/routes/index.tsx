@@ -49,7 +49,7 @@ function App() {
 
                 <section className="justify-baseline mt-12 w-fit bg-theme-primary grid grid-cols-2">
                     <LinkWrapper to={"/projects"}>Projects</LinkWrapper>
-                    <LinkWrapper to={"/work"}>Work Experience</LinkWrapper>
+                    {/*<LinkWrapper to={"/work"}>Work Experience</LinkWrapper>*/}
                 </section>
             </div>
         </main>
