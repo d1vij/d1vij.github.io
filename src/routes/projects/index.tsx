@@ -31,7 +31,8 @@ function RouteComponent() {
                 <a
                     href="https://github.com/d1vij?tab=repositories"
                     target="_blank"
-                    className="text-sm underline decoration-2 decoration-dotted hover:decoration-solid" rel="noopener"
+                    className="text-sm underline decoration-2 decoration-dotted hover:decoration-solid"
+                    rel="noopener"
                 >
                     see more
                 </a>

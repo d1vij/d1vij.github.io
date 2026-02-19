@@ -1,14 +1,19 @@
-.projectImage {
-    transition: transform 100ms ease;
-    outline: solid transparent 1px;
-
-    filter: blur(4px);
-
-    &:has(input:checked) {
+@reference "tailwindcss";
+.image {
+    transition:
+        filter 600ms ease-in-out,
+        transform 200ms ease-in-out;
+    filter: grayscale(1) opacity(60%);
+    transform: scale(95%);
+    &.activeImage {
         filter: none;
+        transform: scale(102%);
+    }
+}
 
-        position: absolute;
-        transform: translate(0%, 0%) rotate(0);
-        z-index: 1000;
+.link {
+    @apply gap-1 justify-center items-center flex w-fit;
+    &:before{
+        content: "*";
     }
 }
