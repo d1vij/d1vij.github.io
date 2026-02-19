@@ -7,8 +7,6 @@ import {
 } from "@tanstack/react-router";
 import { routeTree } from "./routeTree.gen";
 
-import "@/tailwind.css";
-import "@/index.css";
 import DefaultError from "@/components/DefaultError";
 
 const hashHistory = createHashHistory();
@@ -24,6 +22,8 @@ createRoot(document.getElementById("root")!).render(
         <RouterProvider router={router} />
     </StrictMode>,
 );
+
+document.getElementById("loader")?.remove();
 
 declare module "@tanstack/react-router" {
     interface Register {
