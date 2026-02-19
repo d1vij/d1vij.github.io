@@ -1,4 +1,3 @@
-import styles from "./project.module.css";
 import { Github } from "lucide-react";
 import { CgWebsite } from "react-icons/cg";
 import { useLoaderData } from "@tanstack/react-router";
@@ -32,9 +31,9 @@ export default function Links() {
                     <a
                         href={l.url}
                         className={cn(
-                            "flex items-center justify-evenly gap-1 bg-red-700 w-full",
+                            "flex w-full items-center justify-evenly gap-1 bg-red-700",
 
-                            "before:content-['*'] before:font-semibold ",
+                            "before:font-semibold before:content-['*']",
                         )}
                     >
                         <p>{l.for}</p>
@@ -50,7 +49,7 @@ export default function Links() {
         <>
             <div>
                 <h2>View this Project on</h2>
-                <ul className={cn("pl-6 w-fit")}>{linkElms}</ul>
+                <ul className={cn("w-fit pl-6")}>{linkElms}</ul>
             </div>
             <SectionDivider />
         </>

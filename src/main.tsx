@@ -7,6 +7,9 @@ import {
 } from "@tanstack/react-router";
 import { routeTree } from "./routeTree.gen";
 
+import "@/index.css";
+import "@/tailwind.css";
+
 import DefaultError from "@/components/DefaultError";
 
 const hashHistory = createHashHistory();
