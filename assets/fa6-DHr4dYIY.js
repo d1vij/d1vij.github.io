@@ -1,0 +1,1 @@
+import"./react-DiiDXuaL.js";import"./iconBase-C13zHwrv.js";import{i as e,n as t,r as n,t as r}from"./fa6-Dko8qWl4.js";export{n as FaPython,e as FaReact};

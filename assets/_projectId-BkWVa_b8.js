@@ -1,1 +1,0 @@
-import"./react-DiiDXuaL.js";import{b as e,u as t}from"./hooks-BRD1Njuw.js";import"./ProjectPreview-BzRLwZ9k.js";import{n,t as r}from"./_projectId-DgKimD24.js";var i=t(),a=e();function o(){let e=(0,i.c)(2),t=r.useLoaderData(),o;return e[0]===t?o=e[1]:(o=(0,a.jsx)(`section`,{className:`p-5 flex size-full`,children:(0,a.jsx)(n,{...t})}),e[0]=t,e[1]=o),o}export{o as component};
