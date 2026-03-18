@@ -13,7 +13,7 @@
 
 .link {
     @apply gap-1 justify-center items-center flex w-fit;
-    &:before{
+    &:before {
         content: "*";
     }
 }

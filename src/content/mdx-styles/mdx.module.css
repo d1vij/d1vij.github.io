@@ -1,0 +1,248 @@
+@reference "tailwindcss";
+
+:root {
+    --blockquote-color: rgba(from var(--color-light-shade-green) r g b / 20%);
+}
+
+.header {
+    @apply w-full font-semibold cursor-pointer;
+    @apply mb-4 mt-4;
+    @apply hover:underline decoration-2;
+    &:active {
+        background-color: var(--color-light-secondary);
+    }
+}
+
+.header_button {
+    /*@apply mb-2 mt-2;*/
+    @apply size-full flex justify-start items-baseline text-start;
+    @apply leading-14;
+    display: block;
+    cursor: pointer;
+    border: none;
+    font-size: inherit;
+
+    /*uncommment if we ever need the bad looking hyphenation*/
+    /*hyphens: auto;*/
+
+    /*and comment this*/
+    overflow-wrap: anywhere;
+
+    &:hover {
+        color: var(--color-light-text-secondary);
+    }
+}
+.header_1 {
+    font-size: 2.5em;
+}
+
+.header_2 {
+    font-size: 2.2em;
+}
+
+.header_3 {
+    font-size: 1.875em;
+}
+
+.header_4 {
+    font-size: 1.5em;
+}
+
+.header_5 {
+    font-size: 1.25em;
+}
+
+.header_6 {
+    font-size: 1.125em;
+}
+
+.header_icon {
+    /**/
+}
+
+.anchor {
+    --color: hsla(from var(--color-light-secondary) h s calc(l - 40));
+    @apply underline hover:decoration-solid decoration-2 decoration-dotted;
+    @apply transition-colors duration-150 ease-out;
+    text-decoration-color: var(--color);
+    &:hover,
+    &:active {
+        background-color: rgba(from var(--color) r g b / 20%);
+    }
+}
+
+.button {
+    /**/
+}
+
+.bold {
+    @apply font-bold;
+}
+
+.italic {
+    @apply italic;
+}
+
+.span {
+    /**/
+}
+
+.striked {
+    @apply line-through decoration-2 decoration-wavy;
+    text-decoration-color: var(--color-light-shade-red);
+}
+
+.paragraph {
+    @apply mt-2 mb-2 w-fit;
+    word-break: anywhere;
+    &:has(.image) {
+        width: 100%;
+    }
+}
+
+.code {
+    --color: hsla(from var(--color-light-secondary) h s calc(l - 40));
+    @apply outline-1 w-full;
+    @apply p-0 px-1;
+    font-family: var(--font-monospace);
+    outline-color: rgba(from var(--color) r g b / 40%);
+    background-color: rgba(from var(--color) r g b / 20%);
+}
+
+.preformatted {
+    @apply bg-gray-300;
+    @apply font-mono p-2 border border-gray-400 mb-2 w-full overflow-y-scroll;
+    .code {
+        @apply bg-inherit outline-none p-0 text-sm;
+    }
+}
+
+.blockquote {
+    background-color: var(--blockquote-color);
+    border-color: hsl(from var(--blockquote-color) h s calc(l - 60));
+    @apply p-2;
+    @apply border-l-4 border;
+}
+
+.horizontal_line {
+    @apply mt-9 mb-9 border rounded mx-4;
+    border-color: hsla(from var(--color-light-text-primary) h s l / 50%);
+}
+
+.image {
+    @apply size-full aspect-auto min-w-80;
+}
+
+.list {
+    &.list {
+        @apply ml-4;
+    }
+}
+
+.unordered_list {
+    @apply list-disc;
+}
+
+.ordered_list {
+    @apply list-decimal;
+}
+
+.list_item {
+    /**/
+}
+
+.table {
+    @apply border-2 rounded;
+    &,
+    * {
+        border-color: var(--color-light-border);
+    }
+}
+
+.table_head {
+    /**/
+}
+
+.table_head_cell {
+    @apply p-1 border-2 text-center;
+    background-color: var(--color-light-secondary);
+}
+
+.table_body {
+    /**/
+}
+
+.table_row {
+    /**/
+}
+
+.table_data {
+    @apply p-1 border text-center;
+}
+
+.table_action_button {
+    @apply cursor-pointer;
+    &:hover {
+        background-color: var(--color-light-secondary);
+    }
+    &:active {
+        @apply bg-green-200;
+    }
+}
+.table_action_button_csv {
+}
+.table_action_button_html {
+}
+.table_action_button_json {
+}
+.table_action_button_markdown {
+}
+
+.table_container {
+    position: relative;
+    @apply w-fit;
+}
+.table_action_buttons_summary {
+    @apply w-fit;
+    @apply border-2 p-1 px-2.5 cursor-pointer text-center;
+    border-color: var(--color-light-border);
+    background-color: var(--color-light-secondary);
+
+    @apply grid grid-cols-2;
+    &::marker {
+        content: none;
+    }
+}
+
+.table_action_buttons_details {
+    @apply flex-col items-end text-center;
+    @apply translate-x-full;
+    position: absolute;
+    background-color: var(--color-light-primary);
+    right: 0;
+    top: 100%;
+
+    button {
+        display: block;
+        @apply p-1;
+        @apply border-2 w-full;
+    }
+    &:open {
+        .table_action_buttons_summary {
+            @apply border-b-0;
+        }
+
+        button {
+            &:nth-of-type(n) {
+                @apply border-b-transparent;
+            }
+            &,
+            &:last-of-type {
+                border-color: var(--color-light-border);
+            }
+        }
+    }
+}
+
+.separator {
+}

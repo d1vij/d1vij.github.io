@@ -1,7 +1,7 @@
-import * as z from "zod";
-import { LinkIconSchema } from "@/components/ProjectPreview";
-import { ValidSkillsSchema } from "@/content/skills";
-export const ProjectSchema = z.object({
+import { z } from "zod";
+import { ValidSkillsSchema } from "@/content/skill-icons";
+
+export const ProjectMetadata = z.object({
     title: z.string().min(1),
     images: z.array(
         z.object({
@@ -13,7 +13,12 @@ export const ProjectSchema = z.object({
                 ),
         }),
     ),
-    links: z.array(LinkIconSchema),
+    links: z.array(
+        z.object({
+            url: z.httpUrl(),
+            for: z.string().min(1),
+        }),
+    ),
     stack: z.array(
         z.object({
             section: z.string().min(1),
@@ -22,12 +27,12 @@ export const ProjectSchema = z.object({
     ),
     text: z.array(z.string().min(1)),
 });
-export const ProjectImageSchema = ProjectSchema.shape.images.element.pick({
-    title: true,
-    url: true,
-});
 
-export const ProjectLinksSchema = ProjectSchema.shape.links.element.pick({
-    for: true,
+export type ProjectMetadata = z.infer<typeof ProjectMetadata>;
+export function generateProjectMetadata(meta: ProjectMetadata): ProjectMetadata {
+    return meta;
+}
+export const ProjectImagesSchema = ProjectMetadata.shape.images.element.pick({
+    title: true,
     url: true,
 });

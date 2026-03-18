@@ -1,4 +1,4 @@
-import cn from "@/utils/cn";
+import { cn } from "@d1vij/shit-i-always-use";
 
 export default function SectionDivider() {
     return (

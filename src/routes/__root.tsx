@@ -1,8 +1,8 @@
 import {
     createRootRoute,
-    Outlet,
     HeadContent,
     Link,
+    Outlet,
 } from "@tanstack/react-router";
 
 export const Route = createRootRoute({

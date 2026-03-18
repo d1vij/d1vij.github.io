@@ -1,10 +1,10 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
 import {
+    createHashHistory,
     createRouter,
     RouterProvider,
-    createHashHistory,
 } from "@tanstack/react-router";
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
 import { routeTree } from "./routeTree.gen";
 
 import "@/index.css";
@@ -25,8 +25,6 @@ createRoot(document.getElementById("root")!).render(
         <RouterProvider router={router} />
     </StrictMode>,
 );
-
-document.getElementById("loader")?.remove();
 
 declare module "@tanstack/react-router" {
     interface Register {

@@ -1,4 +1,4 @@
-import { Link, type ErrorComponentProps } from "@tanstack/react-router";
+import { type ErrorComponentProps, Link } from "@tanstack/react-router";
 import { useState } from "react";
 
 export default function DefaultErrorComponent(props: ErrorComponentProps) {
@@ -7,7 +7,7 @@ export default function DefaultErrorComponent(props: ErrorComponentProps) {
         <div className="absolute inset-0 z-30 flex size-full flex-col items-center justify-center bg-theme-primary text-center">
             <span>Something went wrong</span>
             <Link to="/">
-                Go back to{" "}
+                Go back to
                 <span className="cursor-pointer underline decoration-1 hover:decoration-2 active:decoration-2">
                     Home
                 </span>

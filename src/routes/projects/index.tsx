@@ -1,9 +1,7 @@
-import ProjectPreview from "@/components/ProjectPreview";
 import { createFileRoute } from "@tanstack/react-router";
-import {
+import ProjectPreview, {
     ProjectsJsonSchema,
-    type Project,
-} from "@/components/ProjectPreview/ProjectPreview";
+} from "@/components/ProjectPreview";
 
 export const Route = createFileRoute("/projects/")({
     component: RouteComponent,
@@ -18,7 +16,7 @@ export const Route = createFileRoute("/projects/")({
 });
 
 function RouteComponent() {
-    const projects: Project[] = Route.useLoaderData();
+    const projects = Route.useLoaderData();
     const projectElms = projects.map((p) => (
         <ProjectPreview key={p.id} {...p} />
     ));

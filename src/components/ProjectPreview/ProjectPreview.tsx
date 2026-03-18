@@ -1,36 +1,15 @@
-import SkillIcons from "@/components/SkillIcons";
-import { ValidSkillsSchema } from "@/content/skills";
-import { useVibrate } from "@/hooks";
-import type { Icon } from "@/types";
+import { useVibrate } from "@d1vij/shit-i-always-use";
 import { Link } from "@tanstack/react-router";
-import z from "zod";
-
 import { AppWindow, Github } from "lucide-react";
+import SkillIcons from "@/components/SkillIcons";
+import type { Icon } from "@/types";
+import {
+    type LinkIconType,
+    ProjectPreviewSchema,
+    type ProjectPreviewType,
+} from "./schema";
 
-export const LinkIconSchema = z.object({
-    for: z.enum(["github", "website"]),
-    url: z.httpUrl(),
-});
-type LinkIcon = z.infer<typeof LinkIconSchema>;
-
-export const ProjectPreviewSchema = z.object({
-    id: z.string(),
-    title: z.string(),
-    description: z.string(),
-    links: z.array(LinkIconSchema),
-    skills: z.array(ValidSkillsSchema),
-});
-type ProjectPreviewProps = {
-    id: string;
-    title: string;
-    description: string;
-    links: LinkIcon[];
-    skills: typeof ValidSkillsSchema.type;
-};
-export type Project = ProjectPreviewProps;
-export const ProjectsJsonSchema = z.object({
-    projects: z.array(ProjectPreviewSchema),
-});
+type ProjectPreviewProps = ProjectPreviewType;
 
 export default function ProjectPreview(props: ProjectPreviewProps) {
     const { title, description, skills, links, id } =
@@ -60,7 +39,7 @@ export default function ProjectPreview(props: ProjectPreviewProps) {
     );
 }
 
-type LinkProps = LinkIcon;
+type LinkProps = LinkIconType;
 function LinkIcon(props: LinkProps) {
     const vibrator = useVibrate();
     function handleClick() {

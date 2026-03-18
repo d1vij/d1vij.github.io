@@ -1,4 +1,4 @@
-import { useVibrate } from "@/hooks";
+import { useVibrate } from "@d1vij/shit-i-always-use";
 import { Link, type LinkProps } from "@tanstack/react-router";
 
 export default function LinkWrapper(props: LinkProps) {

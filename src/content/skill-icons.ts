@@ -10,6 +10,7 @@ const {
     SiTailwindcss,
     SiTypescript,
 } = await import("react-icons/si");
+
 import { z } from "zod";
 
 //TODO: Add icons for Seaborn, Matplotlib, TanstackRouter

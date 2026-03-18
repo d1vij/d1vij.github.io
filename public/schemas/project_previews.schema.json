@@ -26,20 +26,14 @@
                             "properties": {
                                 "for": {
                                     "type": "string",
-                                    "enum": [
-                                        "github",
-                                        "website"
-                                    ]
+                                    "enum": ["github", "website"]
                                 },
                                 "url": {
                                     "type": "string",
                                     "format": "uri"
                                 }
                             },
-                            "required": [
-                                "for",
-                                "url"
-                            ],
+                            "required": ["for", "url"],
                             "additionalProperties": false
                         }
                     },
@@ -73,19 +67,11 @@
                         }
                     }
                 },
-                "required": [
-                    "id",
-                    "title",
-                    "description",
-                    "links",
-                    "skills"
-                ],
+                "required": ["id", "title", "description", "links", "skills"],
                 "additionalProperties": false
             }
         }
     },
-    "required": [
-        "projects"
-    ],
+    "required": ["projects"],
     "additionalProperties": false
 }

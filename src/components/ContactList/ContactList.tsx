@@ -1,6 +1,6 @@
-import { useVibrate } from "@/hooks";
-import type { Icon } from "@/types";
+import { useVibrate } from "@d1vij/shit-i-always-use";
 import z from "zod";
+import type { Icon } from "@/types";
 
 const ContactSchema = z.object({
     id: z.string(),
@@ -25,6 +25,7 @@ export default function ContactList({ contacts }: ContactListProps) {
             <a
                 href={c.href}
                 target="_blank"
+                rel="noopener"
                 onClick={() => vibrator(50)}
                 className={`text-theme-primary-400 decoration-2 hover:text-theme-primary-200 hover:underline active:underline`}
             >

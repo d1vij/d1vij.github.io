@@ -11,11 +11,11 @@ export const Route = createFileRoute("/")({
     }),
 });
 
-import styles from "./homepage.module.css";
 import ContactList from "@/components/ContactList";
+import LinkWrapper from "@/components/LinkWrapper";
 import PrimaryText from "@/components/PrimaryText";
 import { contacts } from "@/content/data";
-import LinkWrapper from "@/components/LinkWrapper";
+import styles from "./homepage.module.css";
 
 function App() {
     return (

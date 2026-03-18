@@ -1,5 +1,6 @@
-import skills, { UnknownSkillSchema } from "@/content/skills";
+import skills, { UnknownSkillSchema } from "@/content/skill-icons";
 import type { Icon } from "@/types";
+
 type SkillIconProps = {
     skill: string;
 };

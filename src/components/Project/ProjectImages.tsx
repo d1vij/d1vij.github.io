@@ -1,20 +1,20 @@
+import { cn } from "@d1vij/shit-i-always-use";
 import { useEffect, useRef, useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 import type z from "zod";
 import type { Icon } from "@/types";
-import cn from "@/utils/cn";
 import styles from "./project.module.css";
-import type { ProjectImageSchema } from "./schemas";
 import SectionDivider from "./SectionDivider";
+import type { ProjectImagesSchema } from "./schemas";
 
-type ProjectImageProps = z.infer<typeof ProjectImageSchema> & {
+type ProjectImageProps = z.infer<typeof ProjectImagesSchema> & {
     z: number;
     totalImages: number;
     isActive: boolean;
 };
 
 type ProjectImagesProps = {
-    images: z.infer<typeof ProjectImageSchema>[];
+    images: z.infer<typeof ProjectImagesSchema>[];
 };
 
 function ProjectImage(props: ProjectImageProps) {

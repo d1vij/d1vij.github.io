@@ -5,7 +5,7 @@ import { tanstackRouter } from "@tanstack/router-vite-plugin";
 import tailwindcss from "@tailwindcss/vite";
 import { visualizer } from "rollup-plugin-visualizer";
 import path from "node:path";
-
+import mdxplugin from "@d1vij/jassm/plugin"
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -28,6 +28,7 @@ export default defineConfig({
         },
     },
     plugins: [
+        mdxplugin(),
         visualizer({
             open: false,
             filename:"dist/stats.html"

@@ -1,24 +1,31 @@
-import { z } from "zod";
 import { createFileRoute } from "@tanstack/react-router";
-
-import Project from "@/components/Project";
-import { ProjectSchema } from "@/components/Project";
+import { z } from "zod";
+import Project, { type ProjectMetadata } from "@/components/Project";
+import projectRegistry, {
+    ProjectRegistrySchema,
+} from "@/content/projectRegistry";
 
 export const Route = createFileRoute("/projects/$projectId")({
     component: RouteComponent,
+    validateSearch(s) {
+        return z.parse(
+            z.object({
+                focus: z.optional(z.string()),
+            }),
+            s,
+        );
+    },
     params: {
-        parse: (raw) => ({
-            projectId: z.coerce
-                .string()
-                .toLowerCase()
-                .transform((s) => s.replaceAll(" ", "-"))
-                .parse(raw.projectId),
+        parse: ({ projectId }) => ({
+            projectId: z.parse(ProjectRegistrySchema, projectId),
         }),
     },
-    loader: async ({ params }) => {
-        const response = await fetch(`/projects/${params.projectId}.json`);
-        const json = await response.json();
-        return ProjectSchema.parse(json);
+    loader: async ({ params: { projectId } }) => {
+        return {
+            id: projectId,
+            component: projectRegistry.getComponent(projectId),
+            meta: projectRegistry.getMetadata(projectId) as ProjectMetadata,
+        };
     },
 });
 
