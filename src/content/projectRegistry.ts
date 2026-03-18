@@ -1,5 +1,5 @@
-import {z} from "zod"
 import { Registry } from "@d1vij/jassm";
+import { z } from "zod";
 
 const projectRegistry = new Registry({
     modulesGlob: import.meta.glob("/src/assets/mdx/projects/**/*.mdx"),
@@ -12,6 +12,4 @@ const projectRegistry = new Registry({
 });
 
 export default projectRegistry;
-export const ProjectRegistrySchema = z.enum(projectRegistry.keys)
-
-console.log(projectRegistry.metadata)
+export const ProjectRegistrySchema = z.enum(projectRegistry.keys);

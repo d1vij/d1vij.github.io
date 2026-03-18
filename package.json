@@ -1,5 +1,5 @@
 {
-  "name": "tanstack-router-vite-tailwindcss-template",
+  "name": "d1vij-portfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,12 +9,14 @@
     "build:hash-history": "tsc -b && VITE_USE_HASH_HISTORY=true vite build",
     "preview": "vite preview",
     "format": "biome format --write src/",
-    "lint": "biome check --fix && tsc -b",
-    "lint:fix": "biome lint --write --unsafe",
+    "lint": "biome check --write --unsafe",
+    "typecheck": "tsc -b",
     "generate:schemas": "bun run src/generate_schema.ts",
-    "stats": "bun run dist/stats.html"
+    "stats": "bun run dist/stats.html",
+    "prepare": "husky"
   },
   "dependencies": {
+    "-": "^0.0.1",
     "@d1vij/jassm": "^0.1.22",
     "@d1vij/shit-i-always-use": "^0.1.12",
     "@tanstack/react-router": "^1.167.4",
@@ -38,6 +40,7 @@
     "@vitejs/plugin-react": "^5.2.0",
     "babel-plugin-react-compiler": "^1.0.0",
     "globals": "^17.4.0",
+    "husky": "^9.1.7",
     "rollup-plugin-visualizer": "^7.0.1",
     "tailwindcss": "^4.2.1",
     "typescript": "~5.9.3",

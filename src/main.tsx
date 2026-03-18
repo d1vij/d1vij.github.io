@@ -17,6 +17,7 @@ const router = createRouter({
     routeTree,
     history: hashHistory,
     defaultErrorComponent: DefaultError,
+    scrollRestoration: true,
 });
 
 // biome-ignore lint/style/noNonNullAssertion: <xplanation>

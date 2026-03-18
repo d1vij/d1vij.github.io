@@ -1,31 +1,43 @@
+import { cn } from "@d1vij/shit-i-always-use";
 import { createFileRoute } from "@tanstack/react-router";
-import ProjectPreview, {
-    ProjectsJsonSchema,
-} from "@/components/ProjectPreview";
+import type { ProjectMetadata } from "@/components/Project";
+import ProjectPreview from "@/components/ProjectPreview";
+import projectPreviews from "@/content/projectPreviews";
+import projectRegistry from "@/content/projectRegistry";
+import styles from "./projects.module.css";
 
 export const Route = createFileRoute("/projects/")({
     component: RouteComponent,
     head: () => ({
         meta: [{ title: "Projects" }],
     }),
-    loader: async () => {
-        const response = await fetch("/project_previews.json");
-        const json = await response.json();
-        return ProjectsJsonSchema.parse(json).projects;
+    loader: () => {
+        return projectRegistry.metadata as Record<string, ProjectMetadata>;
     },
 });
 
 function RouteComponent() {
-    const projects = Route.useLoaderData();
-    const projectElms = projects.map((p) => (
-        <ProjectPreview key={p.id} {...p} />
-    ));
+    const projectMetas = Route.useLoaderData();
+    const projectElms = projectPreviews.map((p) => {
+        const meta = projectMetas[p];
+        return <ProjectPreview key={p} {...meta} />;
+    });
     return (
-        <div className="relative overflow-clip p-5 contain-content md:pt-10">
-            <div className="mx-auto mb-7 grid grid-cols-1 gap-5 border-2 border-x-theme-primary-900 border-y-0 md:w-[80%] md:border-x-2 lg:w-[50%]">
+        <div className="mx-auto mt-10 mb-5 content-container">
+            <div
+                className={cn(
+                    "relative mx-auto grid grid-cols-1 gap-5 overflow-clip border-2 border-x-theme-primary-900 border-y-0 md:border-x-2",
+                )}
+            >
+                <div
+                    className={cn(
+                        styles.background,
+                        "absolute -inset-100 -z-20",
+                    )}
+                ></div>
                 {projectElms}
             </div>
-            <span className="absolute bottom-0 left-0 mx-auto w-full text-center">
+            <div className="mx-auto w-full text-center">
                 <a
                     href="https://github.com/d1vij?tab=repositories"
                     target="_blank"
@@ -34,7 +46,7 @@ function RouteComponent() {
                 >
                     see more
                 </a>
-            </span>
+            </div>
         </div>
     );
 }

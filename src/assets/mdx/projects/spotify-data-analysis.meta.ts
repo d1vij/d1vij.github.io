@@ -1,55 +1,12 @@
 import { generateProjectMetadata } from "@/components/Project";
 export default generateProjectMetadata({
+    id: "spotify-data-analysis",
+    description:
+        "A quantitative analysis of spotify listening history using pandas and matplotlib for data visualizations",
     title: "Spotify Data Analysis",
-    images: [
-        {
-            title: "Dummy 1",
-            url: "/images/dummy-1.jpeg",
-        },
-        {
-            title: "Dummy 2",
-            url: "/images/dummy-4.jpeg",
-        },
-        {
-            title: "Dummy 3",
-            url: "/images/dummy-4.jpeg",
-        },
-        {
-            title: "Dummy 4",
-            url: "/images/dummy-5.jpeg",
-        },
-        {
-            title: "Dummy 5",
-            url: "/images/dummy-5.jpeg",
-        },
-    ],
-    links: [
-        {
-            for: "github",
-            url: "http://github.com/d1vij/spotify-data-analysis",
-        },
-        {
-            for: "website",
-            url: "https://d1vij.github.io/spotify-data-analysis/",
-        },
-    ],
-    stack: [
-        {
-            section: "Analysis",
-            used: ["Python", "Pandas", "Numpy", "*Matplotlib", "*Seaborn"],
-        },
-        {
-            section: "Runtime",
-            used: ["Jupyter"],
-        },
-    ],
-    text: [
-        "LLorem ipsmLorem ipsmLorem ipsmLorem ipsmLorem ipsmLorem ipsmLorem ipsmLorem ipsmLorem ipsmLorem ipsmLorem ipsmLorem ipsmLorem ipsmLorem ipsmLorem ipsmLorem ipsmLorem ipsmLorem ipsmLorem ipsmLorem ipsmorem ipsm",
-        "Lorem ipsm",
-        "Lorem iLorem ipsmLorem ipsmLorem ipsmLorem ipsmLorem ipsmLorem ipsmLorem ipsmLorem ipsmLorem ipsmLorem ipsmLorem ipsmLorem ipsmLorem ipsmLorem ipsmLorem ipsmLorem ipsmLorem ipsmLorem ipsmLorem ipsmLorem ipsmpsm",
-        "Lorem ipsm",
-        "Lorem ipsm",
-        "Lorem ipLorem ipsmLorem ipsmLorem ipsmLorem ipsmLorem ipsmLorem ipsmLorem ipsmLorem ipsmLorem ipsmLorem ipsmLorem ipsmLorem ipsmLorem ipsmLorem ipsmLorem ipsmLorem ipsmLorem ipsmLorem ipsmLorem ipsmLorem ipsmsm",
-        "Lorem ipsm",
-    ],
+    links: {
+        github: "http://github.com/d1vij/spotify-data-analysis",
+        website: "https://d1vij.github.io/spotify-data-analysis/",
+    },
+    stack: ["Python", "Pandas", "Numpy", "*Matplotlib", "*Seaborn", "Jupyter"],
 });

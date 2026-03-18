@@ -17,6 +17,6 @@ export const ProjectPreviewSchema = z.object({
 
 export type ProjectPreviewType = z.infer<typeof ProjectPreviewSchema>;
 
-export const ProjectsJsonSchema = z.object({
+export const ProjectPreviewsJsonSchema = z.object({
     projects: z.array(ProjectPreviewSchema),
 });

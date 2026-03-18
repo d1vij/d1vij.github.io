@@ -3,25 +3,31 @@ import { Link } from "@tanstack/react-router";
 import { AppWindow, Github } from "lucide-react";
 import SkillIcons from "@/components/SkillIcons";
 import type { Icon } from "@/types";
-import {
-    type LinkIconType,
-    ProjectPreviewSchema,
-    type ProjectPreviewType,
-} from "./schema";
+import type { ProjectMetadata } from "../Project/schemas";
+import type { LinkIconType } from "./schema";
 
-type ProjectPreviewProps = ProjectPreviewType;
+type ProjectPreviewProps = ProjectMetadata;
 
-export default function ProjectPreview(props: ProjectPreviewProps) {
-    const { title, description, skills, links, id } =
-        ProjectPreviewSchema.parse(props);
-    const skillIcons = skills.map((s) => <SkillIcons key={s} skill={s} />);
-    const linkIcons = links.map((l) => <LinkIcon key={l.for} {...l} />);
+export default function ProjectPreview({
+    description,
+    links,
+    stack,
+    title,
+    id,
+}: ProjectPreviewProps) {
+    const skillIcons = stack.map((s) => <SkillIcons key={s} skill={s} />);
+    const linkIcons = Object.keys(links).map((l) => {
+        const k = l as LinkIconType["for"];
+        return (
+            <LinkIcon key={k} for={k} url={links[k as keyof typeof links]} />
+        );
+    });
     return (
-        <div className="flex justify-between gap-1 border-2 border-x-0 border-y-theme-primary-900 p-2 md:border-y-2 md:p-4">
+        <div className="flex justify-between gap-1 border-2 border-x-0 border-y-theme-primary-900 bg-theme-primary p-2 md:border-y-2 md:p-4">
             {/* links */}
             <div className="">
                 <Link
-                    className="mb-2 font-semibold text-2xl underline decoration-theme-primary-400 decoration-dotted hover:decoration-solid md:text-3xl"
+                    className="mb-2 font-semibold text-2xl underline decoration-theme-primary-400/60 decoration-dotted hover:decoration-solid md:text-3xl md:decoration-3"
                     to={`/projects/$projectId`}
                     params={{ projectId: id }}
                 >
@@ -40,8 +46,11 @@ export default function ProjectPreview(props: ProjectPreviewProps) {
 }
 
 type LinkProps = LinkIconType;
-function LinkIcon(props: LinkProps) {
+function LinkIcon(props: Partial<LinkProps>) {
     const vibrator = useVibrate();
+
+    if (props.for === undefined) return null;
+
     function handleClick() {
         vibrator(50);
     }
@@ -65,6 +74,7 @@ function LinkIcon(props: LinkProps) {
             href={props.url}
             target="_blank"
             className="cursor-pointer px-1"
+            rel="noopener"
         >
             <Icon className="size-4.5 stroke-theme-primary-400" />
         </a>

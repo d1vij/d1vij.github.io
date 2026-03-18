@@ -22,7 +22,6 @@ export const Route = createFileRoute("/projects/$projectId")({
     },
     loader: async ({ params: { projectId } }) => {
         return {
-            id: projectId,
             component: projectRegistry.getComponent(projectId),
             meta: projectRegistry.getMetadata(projectId) as ProjectMetadata,
         };
@@ -30,10 +29,11 @@ export const Route = createFileRoute("/projects/$projectId")({
 });
 
 function RouteComponent() {
-    const schema = Route.useLoaderData();
+    const data = Route.useLoaderData();
+    console.log(data)
     return (
-        <section className="flex size-full p-5">
-            <Project {...schema} />
+        <section className="mx-auto mt-10 mb-5 content-container">
+            <Project {...data} />
         </section>
     );
 }

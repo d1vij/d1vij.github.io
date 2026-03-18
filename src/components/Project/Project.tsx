@@ -1,26 +1,25 @@
-import type * as z from "zod/v4";
+import { cn } from "@d1vij/shit-i-always-use";
 import Links from "./Links";
-import { ProjectImages } from "./ProjectImages";
+import Preview from "./Preview";
 import SectionDivider from "./SectionDivider";
 import type { ProjectMetadata } from "./schemas";
 import TextSection from "./TextSection";
 
 type ProjectProps = {
-    id: string;
     component: React.LazyExoticComponent<React.ComponentType>;
     meta: ProjectMetadata;
 };
-export default function Project({ component, id, meta }: ProjectProps) {
-    console.log(meta.title);
+export default function Project({ component, meta }: ProjectProps) {
     return (
-        <div className="size-full grow border-2 border-theme-primary-900 p-2">
-            <div className="perspective-distant">
-                <h1 className="text-5xl">{meta.title}</h1>
-                <SectionDivider />
-                <Links />
-                <ProjectImages images={meta.images} />
-                <TextSection />
-            </div>
+        <div
+            className={cn("", "mx-auto border-2 border-theme-primary-900 p-2")}
+        >
+            <h1 className="text-5xl">{meta.title}</h1>
+            <SectionDivider />
+            <Links links={meta.links} />
+            {/*<ProjectImages images={meta.images} />*/}
+            <TextSection component={component} />
+            <Preview link={meta.links.website} />
         </div>
     );
 }

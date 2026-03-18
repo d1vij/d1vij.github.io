@@ -1,0 +1,18 @@
+@keyframes spin {
+    0% {
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.background {
+    background-image: radial-gradient(
+        var(--color-theme-primary-900) 1px,
+        transparent 1px
+    );
+    filter: blur(1px);
+    background-size: 20px 20px;
+    background-color: transparent;
+    animation: spin 400s linear infinite forwards;
+}

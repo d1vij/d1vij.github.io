@@ -24,16 +24,16 @@ function RootComponent() {
             <div className="grow">
                 <Outlet />
             </div>
-            <footer className="left-0 z-20 mb-2 w-full text-center text-sm decoration-2 brightness-50">
-                <a
+            <footer className="left-0 z-20 w-full pb-2 text-center text-sm decoration-2 brightness-50">
+                {/*<a
                     href="https://github.com/d1vij/d1vij"
                     target="_blank"
                     rel="noopener"
                     className="hover:underline active:underline"
                 >
                     source
-                </a>
-                <Link to="/">Home</Link>
+                </a>*/}
+                <Link to="/" className="underline decoration-dotted hover:decoration-solid">Home</Link>
             </footer>
         </>
     );
