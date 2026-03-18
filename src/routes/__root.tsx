@@ -33,7 +33,12 @@ function RootComponent() {
                 >
                     source
                 </a>*/}
-                <Link to="/" className="underline decoration-dotted hover:decoration-solid">Home</Link>
+                <Link
+                    to="/"
+                    className="underline decoration-dotted hover:decoration-solid"
+                >
+                    Home
+                </Link>
             </footer>
         </>
     );

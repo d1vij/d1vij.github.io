@@ -11,7 +11,7 @@ const {
     SiTypescript,
 } = await import("react-icons/si");
 
-import { z } from "zod";
+import * as v from "valibot";
 
 //TODO: Add icons for Seaborn, Matplotlib, TanstackRouter
 
@@ -33,14 +33,14 @@ const skills = {
     MongoDB: DiMongodb,
 } as const;
 export default skills;
-export const UnknownSkillSchema = z.string().regex(/^\*.*/);
+export const UnknownSkillSchema = v.pipe(v.string(), v.regex(/^\*.*/));
 
-const KnownSkillSchema = z.enum(
+const KnownSkillSchema = v.picklist(
     Object.keys(skills) as [keyof typeof skills, ...Array<keyof typeof skills>],
 );
 
 // Allowed skills are keys of either the skills objects or any string starting with a `*` for any unknown skills
-export const ValidSkillsSchema = z.union([
+export const ValidSkillsSchema = v.union([
     UnknownSkillSchema,
     KnownSkillSchema,
 ]);

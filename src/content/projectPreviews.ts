@@ -1,8 +1,8 @@
-import z from "zod";
+import * as v from "valibot";
 import { ProjectRegistrySchema } from "./projectRegistry";
 
-const schema = z.array(ProjectRegistrySchema);
-export default schema.parse([
+const schema = v.array(ProjectRegistrySchema);
+export default v.parse(schema, [
     "spotify-data-analysis",
     "browsersh",
     "bad-ui-battles",

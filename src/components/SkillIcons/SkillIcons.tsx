@@ -1,3 +1,4 @@
+import * as v from "valibot";
 import skills, { UnknownSkillSchema } from "@/content/skill-icons";
 import type { Icon } from "@/types";
 
@@ -11,7 +12,7 @@ function EmptyIcon(_: { className: string }) {
 
 export default function SkillIcons({ skill }: SkillIconProps) {
     let Icon: typeof EmptyIcon | Icon;
-    if (UnknownSkillSchema.safeParse(skill).success) {
+    if (v.safeParse(UnknownSkillSchema, skill).success) {
         Icon = EmptyIcon;
         skill = skill.slice(1);
     } else {

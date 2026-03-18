@@ -1,14 +1,10 @@
-import { useVibrate } from "@d1vij/shit-i-always-use";
-import z from "zod";
 import type { Icon } from "@/types";
-
-const ContactSchema = z.object({
-    id: z.string(),
-    content: z.string(),
-    href: z.url(),
-    icon: z.custom<Icon>(),
-});
-export type Contact = z.infer<typeof ContactSchema>;
+import { useVibrate } from "@d1vij/shit-i-always-use";
+export type Contact = {
+    content: string;
+    href: string;
+    icon: Icon;
+};
 type ContactListProps = {
     contacts: Contact[];
 };
@@ -18,7 +14,7 @@ export default function ContactList({ contacts }: ContactListProps) {
 
     const elms = contacts.map((c) => (
         <li
-            key={c.id}
+            key={c.href}
             className="justify-baseline flex items-center gap-2 text-md"
         >
             <c.icon className="size-4 fill-theme-primary-400 stroke-theme-primary-400 md:size-6" />

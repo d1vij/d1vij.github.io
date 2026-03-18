@@ -1,22 +1,22 @@
-import { z } from "zod";
+import * as v from "valibot";
 import { ValidSkillsSchema } from "@/content/skill-icons";
 
-export const LinkIconSchema = z.object({
-    for: z.enum(["github", "website"]),
-    url: z.httpUrl(),
+export const LinkIconSchema = v.object({
+    for: v.picklist(["github", "website"]),
+    url: v.string(),
 });
-export type LinkIconType = z.infer<typeof LinkIconSchema>;
+export type LinkIconType = v.InferInput<typeof LinkIconSchema>;
 
-export const ProjectPreviewSchema = z.object({
-    id: z.string(),
-    title: z.string(),
-    description: z.string(),
-    links: z.array(LinkIconSchema),
-    skills: z.array(ValidSkillsSchema),
+export const ProjectPreviewSchema = v.object({
+    id: v.string(),
+    title: v.string(),
+    description: v.string(),
+    links: v.array(LinkIconSchema),
+    skills: v.array(ValidSkillsSchema),
 });
 
-export type ProjectPreviewType = z.infer<typeof ProjectPreviewSchema>;
+export type ProjectPreviewType = v.InferInput<typeof ProjectPreviewSchema>;
 
-export const ProjectPreviewsJsonSchema = z.object({
-    projects: z.array(ProjectPreviewSchema),
+export const ProjectPreviewsJsonSchema = v.object({
+    projects: v.array(ProjectPreviewSchema),
 });

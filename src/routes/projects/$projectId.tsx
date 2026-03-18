@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { z } from "zod";
+import * as v from "valibot";
 import Project, { type ProjectMetadata } from "@/components/Project";
 import projectRegistry, {
     ProjectRegistrySchema,
@@ -8,16 +8,16 @@ import projectRegistry, {
 export const Route = createFileRoute("/projects/$projectId")({
     component: RouteComponent,
     validateSearch(s) {
-        return z.parse(
-            z.object({
-                focus: z.optional(z.string()),
+        return v.parse(
+            v.object({
+                focus: v.optional(v.string()),
             }),
             s,
         );
     },
     params: {
         parse: ({ projectId }) => ({
-            projectId: z.parse(ProjectRegistrySchema, projectId),
+            projectId: v.parse(ProjectRegistrySchema, projectId),
         }),
     },
     loader: async ({ params: { projectId } }) => {
@@ -30,7 +30,7 @@ export const Route = createFileRoute("/projects/$projectId")({
 
 function RouteComponent() {
     const data = Route.useLoaderData();
-    console.log(data)
+    console.log(data);
     return (
         <section className="mx-auto mt-10 mb-5 content-container">
             <Project {...data} />

@@ -1,5 +1,5 @@
 import { Registry } from "@d1vij/jassm";
-import { z } from "zod";
+import * as v from "valibot";
 
 const projectRegistry = new Registry({
     modulesGlob: import.meta.glob("/src/assets/mdx/projects/**/*.mdx"),
@@ -12,4 +12,4 @@ const projectRegistry = new Registry({
 });
 
 export default projectRegistry;
-export const ProjectRegistrySchema = z.enum(projectRegistry.keys);
+export const ProjectRegistrySchema = v.picklist(projectRegistry.keys);
