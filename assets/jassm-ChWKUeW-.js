@@ -1,1 +1,0 @@
-import{n as e}from"./chunk-B3K2TuZy.js";import{t}from"./jsx-runtime-CY5pMtCq.js";var n=e(t());function r(e){return(0,n.jsx)({h1:`h1`,...e.components}.h1,{children:`jassm`})}function i(e={}){let{wrapper:t}=e.components||{};return t?(0,n.jsx)(t,{...e,children:(0,n.jsx)(r,{...e})}):r(e)}export{i as default};
