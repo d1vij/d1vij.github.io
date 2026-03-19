@@ -1,8 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowUpLeft } from "lucide-react";
 import * as v from "valibot";
 import Work, { type WorkMetadata } from "@/components/Work";
 import { WorkRegistrySchema, workRegistry } from "@/content/work/workRegistry";
-import { ArrowUpLeft } from "lucide-react";
 
 export const Route = createFileRoute("/work/$id")({
     component: RouteComponent,
@@ -34,9 +34,9 @@ function RouteComponent() {
         <section className="mx-auto mt-4 mb-5 content-container">
             <Link
                 to=".."
-                className="flex gap-1 items-center justify-start relative mb-2"
+                className="relative mb-2 flex items-center justify-start gap-1"
             >
-                <ArrowUpLeft className="size-4 md:absolute -left-6" />
+                <ArrowUpLeft className="-left-6 size-4 md:absolute" />
                 Go back
             </Link>
             <Work {...data} />

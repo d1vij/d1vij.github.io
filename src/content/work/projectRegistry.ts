@@ -25,3 +25,5 @@ export const projectOrder = v.parse(schema, [
     "election-software",
     "portfolio",
 ]);
+
+console.log(projectsRegistry.components)

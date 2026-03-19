@@ -15,6 +15,7 @@ export default defineConfig({
         allowedHosts: true
     },
     build: {
+        minify: false,
         target:"esnext",
         rolldownOptions: {
             optimization: {
