@@ -11,12 +11,10 @@ type WorkProps = {
 };
 export default function Work({ component, meta }: WorkProps) {
     return (
-        <div
-            className={cn("", "mx-auto border-2 border-theme-primary-900 p-2")}
-        >
+        <div className={cn("mx-auto border-2 border-theme-primary-900 p-2")}>
             <h1 className="text-5xl">{meta.title}</h1>
-            <SectionDivider />
             <Links links={meta.links} />
+            <SectionDivider />
             {/*<ProjectImages images={meta.images} />*/}
             <TextSection component={component} />
             <Preview link={meta.links.website} />

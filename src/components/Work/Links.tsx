@@ -1,6 +1,5 @@
 import { cn } from "@d1vij/shit-i-always-use";
 import { title } from "radashi";
-import SectionDivider from "./SectionDivider";
 import type { WorkMetadata } from "./schemas";
 
 type LinksProps = {
@@ -17,13 +16,11 @@ export default function Links({ links }: LinksProps) {
                     href={links[k]}
                     target="_blank"
                     rel="noopener"
-                    className={cn(
-                        "grid w-full grid-cols-[auto_1fr] items-baseline gap-1",
-
-                        "before:font-semibold before:content-['*']",
-                    )}
+                    className={
+                        "underline decoration-2 decoration-dotted hover:decoration-solid"
+                    }
                 >
-                    <p>{title(k)}</p>
+                    {title(k)}
                 </a>
             </li>
         );
@@ -31,11 +28,9 @@ export default function Links({ links }: LinksProps) {
 
     return (
         <>
-            <div>
-                <h2 className="text-xl">View this on</h2>
-                <ul className={cn("w-fit")}>{linkElms}</ul>
+            <div className="mt-4">
+                <ul className={cn("w-fit flex flex-wrap gap-2")}>{linkElms}</ul>
             </div>
-            <SectionDivider />
         </>
     );
 }
