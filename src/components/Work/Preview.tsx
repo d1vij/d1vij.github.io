@@ -24,7 +24,7 @@ export default function Preview({ link }: { link: string | undefined }) {
                 ></div>
                 <button
                     type="button"
-                    className="relative z-20 cursor-pointer bg-theme-primary-800/40 p-2 ring-2 ring-theme-primary-800 hover:ring-theme-primary-700"
+                    className="relative z-20 cursor-pointer bg-theme-primary/40 p-2 ring-2 ring-theme-primary-900"
                     onClick={() => setShow(true)}
                 >
                     Load Preview

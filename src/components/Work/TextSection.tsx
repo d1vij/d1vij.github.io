@@ -35,7 +35,7 @@ export default function TextSection({
                     <button
                         type="button"
                         onClick={() => setOpen(true)}
-                        className="cursor-pointer px-2  text-theme-primary-400 absolute right-0 bottom-0 left-0 grid bg-theme-primary/80 pt-4 pb-3 backdrop-blur"
+                        className="absolute right-0 bottom-0 left-0 grid cursor-pointer bg-theme-primary/80 px-2 pt-4 pb-3 text-theme-primary-400 backdrop-blur"
                     >
                         Expand
                     </button>
