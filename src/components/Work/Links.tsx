@@ -27,10 +27,8 @@ export default function Links({ links }: LinksProps) {
     });
 
     return (
-        <>
-            <div className="mt-4">
-                <ul className={cn("w-fit flex flex-wrap gap-2")}>{linkElms}</ul>
-            </div>
-        </>
+        <div className="mt-4">
+            <ul className={cn("flex w-fit flex-wrap gap-2")}>{linkElms}</ul>
+        </div>
     );
 }
