@@ -6,7 +6,7 @@ import { stylemap } from "@/content/mdx-styles/mdx.styles";
 import SectionDivider from "./SectionDivider";
 
 function Fallback() {
-    return <div>Loading</div>;
+    return <div>Fetching...</div>;
 }
 
 export default function TextSection({
@@ -17,11 +17,11 @@ export default function TextSection({
     const [open, setOpen] = useState(false);
     return (
         <>
-            <div>
+            <div className="relative">
                 <div
                     className={cn(
                         "overflow-clip",
-                        open ? "h-full" : "max-h-[90vh]",
+                        open ? "h-full" : "h-[90vh]",
                     )}
                 >
                     <MDXFromComponent
@@ -32,15 +32,13 @@ export default function TextSection({
                     />
                 </div>
                 <Activity show={!open}>
-                    <div className="place-items-center-safe mt-4 mb-2 grid w-full">
-                        <button
-                            type="button"
-                            onClick={() => setOpen(true)}
-                            className="w-fit cursor-pointer px-2 ring-2 ring-theme-primary-800 hover:ring-theme-primary-700"
-                        >
-                            Expand
-                        </button>
-                    </div>
+                    <button
+                        type="button"
+                        onClick={() => setOpen(true)}
+                        className="cursor-pointer px-2  text-theme-primary-400 absolute right-0 bottom-0 left-0 grid bg-theme-primary/80 pt-4 pb-3 backdrop-blur"
+                    >
+                        Expand
+                    </button>
                 </Activity>
             </div>
             <SectionDivider />
