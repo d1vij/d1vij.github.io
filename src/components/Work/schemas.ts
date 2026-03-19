@@ -1,7 +1,7 @@
 import * as v from "valibot";
 import { ValidSkillsSchema } from "@/content/skill-icons";
 
-export const ProjectMetadata = v.object({
+export const WorkMetadata = v.object({
     id: v.string(),
     title: v.string(),
     description: v.string(),
@@ -14,9 +14,7 @@ export const ProjectMetadata = v.object({
     stack: v.array(ValidSkillsSchema),
 });
 
-export type ProjectMetadata = v.InferInput<typeof ProjectMetadata>;
-export function generateProjectMetadata(
-    meta: ProjectMetadata,
-): ProjectMetadata {
+export type WorkMetadata = v.InferInput<typeof WorkMetadata>;
+export function generateWorkMetadata(meta: WorkMetadata): WorkMetadata {
     return meta;
 }

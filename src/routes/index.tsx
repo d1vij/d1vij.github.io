@@ -5,7 +5,7 @@ export const Route = createFileRoute("/")({
     head: () => ({
         meta: [
             {
-                title: "Divij Verma",
+                title: "Divij Verma | Portfolio",
             },
         ],
     }),
@@ -48,7 +48,7 @@ function App() {
                 </section>
 
                 <section className="justify-baseline mt-12 grid w-fit grid-cols-2 bg-theme-primary">
-                    <LinkWrapper to={"/projects"}>Projects</LinkWrapper>
+                    <LinkWrapper to={"/work"}>Work</LinkWrapper>
                     {/*<LinkWrapper to={"/work"}>Work Experience</LinkWrapper>*/}
                 </section>
             </div>

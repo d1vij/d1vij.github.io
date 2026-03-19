@@ -2,14 +2,14 @@ import { cn } from "@d1vij/shit-i-always-use";
 import Links from "./Links";
 import Preview from "./Preview";
 import SectionDivider from "./SectionDivider";
-import type { ProjectMetadata } from "./schemas";
+import type { WorkMetadata } from "./schemas";
 import TextSection from "./TextSection";
 
-type ProjectProps = {
+type WorkProps = {
     component: React.LazyExoticComponent<React.ComponentType>;
-    meta: ProjectMetadata;
+    meta: WorkMetadata;
 };
-export default function Project({ component, meta }: ProjectProps) {
+export default function Work({ component, meta }: WorkProps) {
     return (
         <div
             className={cn("", "mx-auto border-2 border-theme-primary-900 p-2")}

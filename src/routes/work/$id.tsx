@@ -1,11 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import * as v from "valibot";
-import Project, { type ProjectMetadata } from "@/components/Project";
-import projectRegistry, {
-    ProjectRegistrySchema,
-} from "@/content/projectRegistry";
+import Work, { type WorkMetadata } from "@/components/Work";
+import { WorkRegistrySchema, workRegistry } from "@/content/work/workRegistry";
 
-export const Route = createFileRoute("/projects/$projectId")({
+export const Route = createFileRoute("/work/$id")({
     component: RouteComponent,
     validateSearch(s) {
         return v.parse(
@@ -16,14 +14,14 @@ export const Route = createFileRoute("/projects/$projectId")({
         );
     },
     params: {
-        parse: ({ projectId }) => ({
-            projectId: v.parse(ProjectRegistrySchema, projectId),
+        parse: ({ id }) => ({
+            id: v.parse(WorkRegistrySchema, id),
         }),
     },
-    loader: async ({ params: { projectId } }) => {
+    loader: async ({ params: { id } }) => {
         return {
-            component: projectRegistry.getComponent(projectId),
-            meta: projectRegistry.getMetadata(projectId) as ProjectMetadata,
+            component: workRegistry.getComponent(id),
+            meta: workRegistry.getMetadata(id) as WorkMetadata,
         };
     },
 });
@@ -33,7 +31,7 @@ function RouteComponent() {
     console.log(data);
     return (
         <section className="mx-auto mt-10 mb-5 content-container">
-            <Project {...data} />
+            <Work {...data} />
         </section>
     );
 }

@@ -1,5 +1,5 @@
-import type { Icon } from "@/types";
 import { useVibrate } from "@d1vij/shit-i-always-use";
+import type { Icon } from "@/types";
 export type Contact = {
     content: string;
     href: string;

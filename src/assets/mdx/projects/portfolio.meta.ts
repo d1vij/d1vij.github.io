@@ -1,6 +1,6 @@
-import { generateProjectMetadata } from "@/components/Project";
+import { generateWorkMetadata } from "@/components/Work";
 
-export default generateProjectMetadata({
+export default generateWorkMetadata({
     id: "portfolio-website",
     title: "Portfolio Website",
     description: "",

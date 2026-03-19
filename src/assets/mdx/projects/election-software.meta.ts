@@ -1,6 +1,6 @@
-import { generateProjectMetadata } from "@/components/Project";
+import { generateWorkMetadata } from "@/components/Work";
 
-export default generateProjectMetadata({
+export default generateWorkMetadata({
     id: "election-software",
     title: "Election Software",
     description: "A fullstack application for secure vote ",

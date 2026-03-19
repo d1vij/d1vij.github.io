@@ -1,10 +1,10 @@
 import { cn } from "@d1vij/shit-i-always-use";
 import { title } from "radashi";
 import SectionDivider from "./SectionDivider";
-import type { ProjectMetadata } from "./schemas";
+import type { WorkMetadata } from "./schemas";
 
 type LinksProps = {
-    links: ProjectMetadata["links"];
+    links: WorkMetadata["links"];
 };
 export default function Links({ links }: LinksProps) {
     const keys = Object.keys(links) as (keyof typeof links)[];
@@ -32,7 +32,7 @@ export default function Links({ links }: LinksProps) {
     return (
         <>
             <div>
-                <h2 className="text-xl">View this Project on</h2>
+                <h2 className="text-xl">View this on</h2>
                 <ul className={cn("w-fit")}>{linkElms}</ul>
             </div>
             <SectionDivider />
