@@ -23,7 +23,7 @@ function App() {
             <div className="relative p-5 px-4! md:p-10">
                 <div className={styles.backdrop}></div>
                 <section className="relative z-20 flex flex-col content-container content-container md:mx-auto">
-                    <h1 className="text-start font-semibold text-8xl leading-tight tracking-tight md:text-9xl">
+                    <h1 className="text-start font-light text-8xl uppercase leading-tighter tracking-tighter md:text-9xl">
                         Divij Verma
                     </h1>
 

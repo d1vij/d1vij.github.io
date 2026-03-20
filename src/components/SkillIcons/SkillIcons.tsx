@@ -20,9 +20,9 @@ export default function SkillIcons({ skill }: SkillIconProps) {
         Icon = skills[skill];
     }
     return (
-        <span className="flex w-fit items-center justify-center gap-1 border-2 border-theme-primary-900/50 bg-theme-primary-950 p-1 text-center d:text-sm text-theme-primary-200 text-xs">
+        <span className="group flex w-fit items-center justify-center gap-1 border-2 border-theme-primary-900/50 bg-theme-primary-950 p-1 text-center d:text-sm text-theme-primary-200 text-xs">
             <Icon className="size-3.5" />
-            <span>{skill}</span>
+            <span className="font-light">{skill}</span>
         </span>
     );
 }

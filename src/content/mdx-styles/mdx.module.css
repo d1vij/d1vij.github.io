@@ -6,21 +6,30 @@
 
 .header {
     @apply w-full font-semibold cursor-pointer;
-    @apply mb-4 mt-4;
-    @apply hover:underline decoration-2;
+    @apply mt-4 mb-2 tracking-tight;
+    @apply underline decoration-2 decoration-dotted;
+
+    text-decoration-color: rgba(from var(--color-theme-primary-800) r g b / 70%);
+
+
     &:active {
-        background-color: var(--color-light-secondary);
+        background-color: var(--color-theme-primary-900);
     }
 }
 
 .header_button {
-    /*@apply mb-2 mt-2;*/
-    @apply size-full flex justify-start items-baseline text-start;
-    @apply leading-14;
+    @apply w-full flex justify-start items-baseline text-start relative;
+    @apply leading-10;
     display: block;
     cursor: pointer;
     border: none;
     font-size: inherit;
+
+    /*&::after {
+        content: "#";
+        @apply absolute right-0 top-0;
+        color: rgba(from var(--color-theme-primary-900) r g b / 80%);
+    }*/
 
     /*uncommment if we ever need the bad looking hyphenation*/
     /*hyphens: auto;*/
@@ -32,6 +41,7 @@
         color: var(--color-light-text-secondary);
     }
 }
+
 .header_1 {
     font-size: 2.5em;
 }
@@ -62,9 +72,10 @@
 
 .anchor {
     --color: hsla(from var(--color-light-secondary) h s calc(l - 40));
-    @apply underline hover:decoration-solid decoration-2 decoration-dotted;
+    @apply underline hover:decoration-solid decoration-2 decoration-dotted italic;
     @apply transition-colors duration-150 ease-out;
     text-decoration-color: var(--color);
+
     &:hover,
     &:active {
         background-color: rgba(from var(--color) r g b / 20%);
@@ -95,6 +106,7 @@
 .paragraph {
     @apply mt-2 mb-2 w-fit;
     word-break: anywhere;
+
     &:has(.image) {
         width: 100%;
     }
@@ -112,6 +124,7 @@
 .preformatted {
     @apply bg-gray-300;
     @apply font-mono p-2 border border-gray-400 mb-2 w-full overflow-y-scroll;
+
     .code {
         @apply bg-inherit outline-none p-0 text-sm;
     }
@@ -153,6 +166,7 @@
 
 .table {
     @apply border-2 rounded;
+
     &,
     * {
         border-color: var(--color-light-border);
@@ -182,26 +196,29 @@
 
 .table_action_button {
     @apply cursor-pointer;
+
     &:hover {
         background-color: var(--color-light-secondary);
     }
+
     &:active {
         @apply bg-green-200;
     }
 }
-.table_action_button_csv {
-}
-.table_action_button_html {
-}
-.table_action_button_json {
-}
-.table_action_button_markdown {
-}
+
+.table_action_button_csv {}
+
+.table_action_button_html {}
+
+.table_action_button_json {}
+
+.table_action_button_markdown {}
 
 .table_container {
     position: relative;
     @apply w-fit;
 }
+
 .table_action_buttons_summary {
     @apply w-fit;
     @apply border-2 p-1 px-2.5 cursor-pointer text-center;
@@ -209,6 +226,7 @@
     background-color: var(--color-light-secondary);
 
     @apply grid grid-cols-2;
+
     &::marker {
         content: none;
     }
@@ -227,6 +245,7 @@
         @apply p-1;
         @apply border-2 w-full;
     }
+
     &:open {
         .table_action_buttons_summary {
             @apply border-b-0;
@@ -236,6 +255,7 @@
             &:nth-of-type(n) {
                 @apply border-b-transparent;
             }
+
             &,
             &:last-of-type {
                 border-color: var(--color-light-border);
@@ -244,5 +264,4 @@
     }
 }
 
-.separator {
-}
+.separator {}

@@ -2,7 +2,8 @@
 
 @theme {
     /*--font-primary: "Geist Mono";*/
-    --font-primary: "Cascadia Code";
+    /*--font-primary: "Cascadia Code";*/
+    --font-primary: "MapleMono";
     --default-font-family: var(--font-primary);
 
     --color-theme-primary: #151515;

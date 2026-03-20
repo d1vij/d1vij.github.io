@@ -26,4 +26,4 @@ export const projectOrder = v.parse(schema, [
     "portfolio",
 ]);
 
-console.log(projectsRegistry.components)
+console.log(projectsRegistry.components);

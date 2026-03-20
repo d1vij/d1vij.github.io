@@ -21,7 +21,6 @@ export default function WorkListItem({
     title,
     id,
 }: WorkListItemProps) {
-    const skillIcons = stack.map((s) => <SkillIcons key={s} skill={s} />);
     const router = useRouter();
     const location = router.buildLocation({
         to: "/work/$id",
@@ -43,8 +42,9 @@ export default function WorkListItem({
             );
         }),
     ];
+    const skillIcons = stack.map((s) => <SkillIcons key={s} skill={s} />);
     return (
-        <div className="flex justify-between gap-1 border-2 border-x-0 border-y-theme-primary-900 bg-theme-primary p-2 md:border-y-2 md:p-4">
+        <div className="flex justify-between gap-1 border-2 border-x-0 border-y-theme-primary-900/60 bg-theme-primary p-3 md:border-y-2">
             {/* links */}
             <div className="">
                 <Link

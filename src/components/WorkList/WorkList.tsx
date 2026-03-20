@@ -17,10 +17,12 @@ export default function WorkList({ metadatas, title, order }: WorkListProps) {
 
     return (
         <div>
-            <h1 className="mb-2 text-5xl">{title}</h1>
+            <h1 className="mb-5 font-semibold text-5xl uppercase tracking-tight underline decoration-2 decoration-theme-primary-400 decoration-wavy">
+                {title}
+            </h1>
             <div
                 className={cn(
-                    "relative mx-auto grid grid-cols-1 gap-5 overflow-clip border-2 border-x-theme-primary-900 border-y-0 md:border-x-2",
+                    "relative mx-auto grid grid-cols-1 gap-5 overflow-clip border-2 border-x-theme-primary-900/60 border-y-0 md:border-x-2",
                 )}
             >
                 <div

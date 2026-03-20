@@ -21,7 +21,7 @@ const librariesMetas = librariesRegistry.metadata as Record<
 
 function RouteComponent() {
     return (
-        <div className="mx-auto mt-10 mb-5 content-container">
+        <div className="mx-auto mt-10 mb-5 space-y-4 content-container">
             <WorkList
                 metadatas={projectMetas}
                 title={"Projects"}
@@ -36,7 +36,7 @@ function RouteComponent() {
                 <a
                     href="https://github.com/d1vij?tab=repositories"
                     target="_blank"
-                    className="text-sm underline decoration-2 decoration-dotted hover:decoration-solid"
+                    className="text-sm italic underline decoration-2 decoration-dotted hover:decoration-solid"
                     rel="noopener"
                 >
                     see more
