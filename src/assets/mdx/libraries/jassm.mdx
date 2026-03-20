@@ -1,1 +1,27 @@
-# jassm
+Created JASSM (Just Another Static Site Maker), a lightweight abstraction layer
+built on top of MDX and React for building router-agnostic, content-driven
+websites such as blogs, documentation platforms, and developer portfolios.
+
+
+JASSM focuses on a filesystem-driven, registry-based architecture powered
+by Vite’s `import.meta.glob`, enabling automatic discovery of MDX files,
+extraction of metadata and exports, and construction of a centralized, type-safe
+content registry without manual routing or imports.
+
+
+### Features
+
+- Implemented filesystem-based content discovery with automatic page registration, and built a centralized, type-safe registry as the single source of truth with compile-time route validation to reduce runtime errors
+
+
+- Designed a zero-config workflow where adding MDX files automatically handles routing and metadata extraction, while maintaining a clear separation between developers and content authors
+
+- Developed a runtime MDX layer with globally available React components, eliminating repetitive imports in MDX files, and implemented a class-map-based styling system to decouple styles from component logic while ensuring compatibility with Tailwind CSS and standard CSS approaches
+
+
+- Implemented lazy loading for MDX pages to optimize performance, and designed the system to scale efficiently for large content-heavy applications without degradation
+
+### Used At
+
+1. _This current site_ uses JASSM to load the text content for all _works_.
+2. The Blog system at [TheSmallBits](https://thesmallbits.github.io)

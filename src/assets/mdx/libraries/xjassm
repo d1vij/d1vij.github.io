@@ -1,0 +1,29 @@
+Created Jassm _(just another static site maker<sup>1</sup>)_, a lightweight abstraction layer over MDX and React for building router-agnostic,
+content-driven websites such as blogs and documentation platforms focused on simplyfing process for both developers and Authors alike.
+
+It is built around a registry-based architecture powered by Vite’s `import.meta.glob`,
+which allows automatic discovery of _pages_ and their respective bundled metadata and exports.
+
+## Key Features
+
+### A Type-Safe content registry
+
+- Uses vite's `import.meta.glob` to construct a filesystem-based registry of pages.
+- Ensures compile time type safe static path accesses.
+- The registry system further allows for a predictable and strongly typed access to exports and page metadata without any manual imports.
+
+### Implicit Component Injection into MDX at Runtime
+
+_Components_ are registered globally once and are automatically injecting into the rendered MDX component at runtime. Which eliminates the need for manual importing within the source files.
+
+### CSS Class-Map Based Styling System
+
+Style classes are linked externally via a key value map, which decouples the stylings from core components and allows the usage of any framework and method for styling components.
+
+### Simple Authoring Process
+
+The system is structured as such that it provides a separation of concern between developers and content creators wherein adding new pages is as simple as creating its corresponding file in the source directory.
+
+### Lazy Loading content
+
+Each MDX route is loaded lazily only when requested, this provides inifinite scalability

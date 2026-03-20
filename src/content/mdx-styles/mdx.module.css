@@ -115,7 +115,7 @@
 }
 
 .code {
-    --color: hsla(from var(--color-light-secondary) h s calc(l - 40));
+    --color: var(--color-theme-primary-400);
     @apply outline-1 w-full;
     @apply p-0 px-1;
     font-family: var(--font-monospace);
@@ -125,7 +125,7 @@
 
 .preformatted {
     @apply bg-gray-300;
-    @apply font-mono p-2 border border-gray-400 mb-2 w-full overflow-y-scroll;
+    @apply font-mono p-2 border mb-2 w-full overflow-y-scroll;
 
     .code {
         @apply bg-inherit outline-none p-0 text-sm;
@@ -140,8 +140,8 @@
 }
 
 .horizontal_line {
-    @apply mt-9 mb-9 border rounded mx-4;
-    border-color: hsla(from var(--color-light-text-primary) h s l / 50%);
+    @apply mt-5 mb-5 border-t-2 border-dotted;
+    border-color: var(--color-theme-primary-800);
 }
 
 .image {

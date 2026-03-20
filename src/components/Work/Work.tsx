@@ -18,7 +18,10 @@ export default function Work({ component, meta }: WorkProps) {
             <Links links={meta.links} />
             <SectionDivider />
             {/*<ProjectImages images={meta.images} />*/}
-            <TextSection component={component} />
+            <TextSection
+                component={component}
+                hasWebsite={Boolean(meta.links.website)}
+            />
             <Preview link={meta.links.website} />
         </div>
     );

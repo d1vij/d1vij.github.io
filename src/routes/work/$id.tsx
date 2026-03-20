@@ -29,7 +29,6 @@ export const Route = createFileRoute("/work/$id")({
 
 function RouteComponent() {
     const data = Route.useLoaderData();
-    console.log(data);
     return (
         <section className="mx-auto mt-4 mb-5 content-container">
             <Link

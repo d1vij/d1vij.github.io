@@ -9,13 +9,14 @@ const {
     SiPandas,
     SiTailwindcss,
     SiTypescript,
+    SiVite,
 } = await import("react-icons/si");
 
 import * as v from "valibot";
 
 //TODO: Add icons for Seaborn, Matplotlib, TanstackRouter
 
-const skills = {
+export const skills = {
     // web
     React: FaReact,
     TailwindCSS: SiTailwindcss,
@@ -31,6 +32,7 @@ const skills = {
     Jupyter: SiJupyter,
     Docker: FaDocker,
     MongoDB: DiMongodb,
+    Vite: SiVite,
 } as const;
 export default skills;
 export const UnknownSkillSchema = v.pipe(v.string(), v.regex(/^\*.*/));
@@ -38,9 +40,11 @@ export const UnknownSkillSchema = v.pipe(v.string(), v.regex(/^\*.*/));
 const KnownSkillSchema = v.picklist(
     Object.keys(skills) as [keyof typeof skills, ...Array<keyof typeof skills>],
 );
+export type KnownSkills = v.InferInput<typeof KnownSkillSchema>;
 
 // Allowed skills are keys of either the skills objects or any string starting with a `*` for any unknown skills
 export const ValidSkillsSchema = v.union([
     UnknownSkillSchema,
     KnownSkillSchema,
 ]);
+export type ValidSkill = KnownSkills | `*${string}`;
