@@ -43,6 +43,7 @@ export function Image({
                     "--img-md-width": `min(100%,${widthRem}rem)`,
                 } as React.CSSProperties
             }
+            loading="lazy"
         />
     );
 }
