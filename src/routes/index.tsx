@@ -35,6 +35,7 @@ function App() {
 
             <div className="mx-auto p-5 content-container content-width">
                 <section className="mt-10 md:mt-20 md:text-xl">
+                    <PrimaryText>{"<WIP>"}</PrimaryText>
                     <PrimaryText>
                         I mostly work with web technologies and python and am
                         currently learning C and Go.
