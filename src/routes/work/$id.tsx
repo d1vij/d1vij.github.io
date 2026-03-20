@@ -34,9 +34,9 @@ function RouteComponent() {
         <section className="mx-auto mt-4 mb-5 content-container">
             <Link
                 to=".."
-                className="relative mb-2 flex items-center justify-start gap-1 group"
+                className="group relative mb-2 flex items-center justify-start gap-1"
             >
-                <ArrowUpLeft className="-left-6 size-4 md:absolute group-hover:-translate-0.5 transition-transform duration-100" />
+                <ArrowUpLeft className="group-hover:-translate-0.5 -left-6 size-4 transition-transform duration-100 md:absolute" />
                 Go back
             </Link>
             <Work {...data} />

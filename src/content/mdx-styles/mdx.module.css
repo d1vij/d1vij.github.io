@@ -9,8 +9,10 @@
     @apply mt-4 mb-2 tracking-tight;
     @apply underline decoration-2 decoration-dotted;
 
-    text-decoration-color: rgba(from var(--color-theme-primary-800) r g b / 70%);
-
+    text-decoration-color: rgba(
+        from var(--color-theme-primary-800) r g b /
+        70%
+    );
 
     &:active {
         background-color: var(--color-theme-primary-900);
@@ -206,13 +208,17 @@
     }
 }
 
-.table_action_button_csv {}
+.table_action_button_csv {
+}
 
-.table_action_button_html {}
+.table_action_button_html {
+}
 
-.table_action_button_json {}
+.table_action_button_json {
+}
 
-.table_action_button_markdown {}
+.table_action_button_markdown {
+}
 
 .table_container {
     position: relative;
@@ -264,4 +270,5 @@
     }
 }
 
-.separator {}
+.separator {
+}
