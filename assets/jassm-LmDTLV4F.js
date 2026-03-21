@@ -1,4 +1,4 @@
-import{n as e}from"./chunk-B3K2TuZy.js";import{t}from"./jsx-runtime-CY5pMtCq.js";var n=e(t());function r(e){let t={a:`a`,code:`code`,em:`em`,h3:`h3`,li:`li`,ol:`ol`,p:`p`,ul:`ul`,...e.components};return(0,n.jsxs)(n.Fragment,{children:[(0,n.jsx)(t.p,{children:`Created JASSM (Just Another Static Site Maker), a lightweight abstraction layer
+import{n as e}from"./chunk-B3K2TuZy.js";import{t}from"./jsx-runtime-1LQxQxZH.js";var n=e(t());function r(e){let t={a:`a`,code:`code`,em:`em`,h3:`h3`,li:`li`,ol:`ol`,p:`p`,ul:`ul`,...e.components};return(0,n.jsxs)(n.Fragment,{children:[(0,n.jsx)(t.p,{children:`Created JASSM (Just Another Static Site Maker), a lightweight abstraction layer
 built on top of MDX and React for building router-agnostic, content-driven
 websites such as blogs, documentation platforms, and developer portfolios.`}),`
 `,(0,n.jsxs)(t.p,{children:[`JASSM focuses on a filesystem-driven, registry-based architecture powered
