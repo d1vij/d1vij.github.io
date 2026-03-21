@@ -1,74 +1,25 @@
-/*Maple Mono*/
-/* Normal */
+/* maple-mono-latin-400-normal */
 @font-face {
     font-family: "MapleMono";
-    src: url("../assets/fonts/MapleMono-Variable/MapleMono-Light.ttf.woff2")
-        format("woff2");
-    font-weight: 300;
     font-style: normal;
     font-display: swap;
-}
-
-@font-face {
-    font-family: "MapleMono";
-    src: url("../assets/fonts/MapleMono-Variable/MapleMono-Regular.ttf.woff2")
-        format("woff2");
     font-weight: 400;
+    src:
+        url(https://cdn.jsdelivr.net/fontsource/fonts/maple-mono@latest/latin-400-normal.woff2)
+        format("woff2"),
+        url(https://cdn.jsdelivr.net/fontsource/fonts/maple-mono@latest/latin-400-normal.woff)
+        format("woff");
+}
+
+/* maple-mono-latin-600-normal */
+@font-face {
+    font-family: "MapleMono";
     font-style: normal;
     font-display: swap;
-}
-
-@font-face {
-    font-family: "MapleMono";
-    src: url("../assets/fonts/MapleMono-Variable/MapleMono-Medium.ttf.woff2")
-        format("woff2");
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "MapleMono";
-    src: url("../assets/fonts/MapleMono-Variable/MapleMono-SemiBold.ttf.woff2")
-        format("woff2");
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-}
-
-/*Italics*/
-@font-face {
-    font-family: "MapleMono";
-    src: url("../assets/fonts/MapleMono-Variable/MapleMono-LightItalic.ttf.woff2")
-        format("woff2");
-    font-weight: 300;
-    font-style: italic;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "MapleMono";
-    src: url("../assets/fonts/MapleMono-Variable/MapleMono-Italic.ttf.woff2")
-        format("woff2");
-    font-weight: 400;
-    font-style: italic;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "MapleMono";
-    src: url("../assets/fonts/MapleMono-Variable/MapleMono-MediumItalic.ttf.woff2")
-        format("woff2");
-    font-weight: 500;
-    font-style: italic;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "MapleMono";
-    src: url("../assets/fonts/MapleMono-Variable/MapleMono-SemiBoldItalic.ttf.woff2")
-        format("woff2");
-    font-weight: 700;
-    font-style: italic;
-    font-display: swap;
+    font-weight: 600;
+    src:
+        url(https://cdn.jsdelivr.net/fontsource/fonts/maple-mono@latest/latin-600-normal.woff2)
+        format("woff2"),
+        url(https://cdn.jsdelivr.net/fontsource/fonts/maple-mono@latest/latin-600-normal.woff)
+        format("woff");
 }

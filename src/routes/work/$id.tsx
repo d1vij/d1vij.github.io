@@ -1,5 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowUpLeft } from "lucide-react";
+import { createFileRoute } from "@tanstack/react-router";
 import * as v from "valibot";
 import Work, { type WorkMetadata } from "@/components/Work";
 import { WorkRegistrySchema, workRegistry } from "@/content/work/workRegistry";
@@ -25,20 +24,18 @@ export const Route = createFileRoute("/work/$id")({
             meta: workRegistry.getMetadata(id) as WorkMetadata,
         };
     },
+    head({ loaderData }) {
+        return {
+            meta: [
+                {
+                    title: `${loaderData?.meta.title || "Work"} | Divij Verma`,
+                },
+            ],
+        };
+    },
 });
 
 function RouteComponent() {
     const data = Route.useLoaderData();
-    return (
-        <section className="mx-auto mt-4 mb-5 content-container">
-            <Link
-                to=".."
-                className="group relative mb-2 flex items-center justify-start gap-1"
-            >
-                <ArrowUpLeft className="group-hover:-translate-0.5 -left-6 size-4 transition-transform duration-100 md:absolute" />
-                Go back
-            </Link>
-            <Work {...data} />
-        </section>
-    );
+    return <Work {...data} />;
 }

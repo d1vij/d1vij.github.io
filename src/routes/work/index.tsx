@@ -5,11 +5,10 @@ import librariesRegistry, {
     librariesOrder,
 } from "@/content/work/librariesRegistry";
 import { projectOrder, projectsRegistry } from "@/content/work/projectRegistry";
-
 export const Route = createFileRoute("/work/")({
     component: RouteComponent,
     head: () => ({
-        meta: [{ title: "Divij Verma | Work" }],
+        meta: [{ title: "Work | Divij Verma" }],
     }),
 });
 
@@ -21,7 +20,7 @@ const librariesMetas = librariesRegistry.metadata as Record<
 
 function RouteComponent() {
     return (
-        <div className="mx-auto mt-10 mb-5 space-y-4 content-container">
+        <>
             <WorkList
                 metadatas={projectMetas}
                 title={"Projects"}
@@ -42,6 +41,6 @@ function RouteComponent() {
                     see more
                 </a>
             </div>
-        </div>
+        </>
     );
 }
