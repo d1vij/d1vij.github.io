@@ -3,7 +3,7 @@ import { generateWorkMetadata } from "@/components/Work";
 export default generateWorkMetadata({
     id: "bad-ui-battles",
     title: "Bad UI Battles",
-    description: "A",
+    description: "Recreating the UIs found at r/badUIbattles",
     stack: ["React", "TailwindCSS", "TypeScript", "SCSS"],
     links: {
         github: "https://github.com/d1vij/bad-ui-battles",
