@@ -1,8 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { lazy } from "react";
 import * as v from "valibot";
-import Work, { type WorkMetadata } from "@/components/Work";
-import { WorkRegistrySchema, workRegistry } from "@/content/work/workRegistry";
+import type { WorkMetadata } from "@/components/Work";
 
+const Work = lazy(() => import("@/components/Work"));
+
+const { WorkRegistrySchema, workRegistry } = await import(
+    "@/content/work/workRegistry"
+);
 export const Route = createFileRoute("/work/$id")({
     component: RouteComponent,
     validateSearch(s) {

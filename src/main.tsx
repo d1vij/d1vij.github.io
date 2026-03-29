@@ -18,6 +18,7 @@ const router = createRouter({
     routeTree,
     history: hashHistory,
     defaultErrorComponent: DefaultError,
+
     scrollRestoration: true,
 });
 

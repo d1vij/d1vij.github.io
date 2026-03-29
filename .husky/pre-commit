@@ -1,3 +1,4 @@
 bun format
-bun lint 
+bun lint
 bun typecheck
+git add -A
