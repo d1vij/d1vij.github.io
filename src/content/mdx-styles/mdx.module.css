@@ -90,6 +90,8 @@
 
 .bold {
     @apply font-bold;
+
+    color: var(--color-theme-primary-50);
 }
 
 .italic {

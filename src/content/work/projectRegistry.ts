@@ -13,15 +13,3 @@ export const projectsRegistry = new Registry({
 
 export default projectsRegistry;
 export const ProjectsRegistrySchema = v.picklist(projectsRegistry.keys);
-
-const schema = v.array(ProjectsRegistrySchema);
-/**
- * Order of items when in WorkList
- */
-export const projectOrder = v.parse(schema, [
-    "spotify-data-analysis",
-    "browsersh",
-    "bad-ui-battles",
-    "election-software",
-    "portfolio",
-]);

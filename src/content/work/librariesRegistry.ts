@@ -13,9 +13,3 @@ export const librariesRegistry = new Registry({
 
 export default librariesRegistry;
 export const LibrariesRegistrySchema = v.picklist(librariesRegistry.keys);
-
-// const schema = v.array(LibrariesRegistrySchema);
-/**
- * Order of items when in WorkList
- */
-export const librariesOrder = librariesRegistry.keys;

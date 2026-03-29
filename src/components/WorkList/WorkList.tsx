@@ -5,11 +5,11 @@ import styles from "./worklist.module.css";
 
 type WorkListProps = {
     title: string;
-    order: string[];
     metadatas: Record<string, WorkMetadata>;
 };
 
-export default function WorkList({ metadatas, title, order }: WorkListProps) {
+export default function WorkList({ metadatas, title }: WorkListProps) {
+    const order = (Object.keys(metadatas) as (keyof typeof metadatas)[]).sort();
     const listElms = order.map((m) => {
         const meta = metadatas[m];
         return <WorkListItem key={m} {...meta} />;

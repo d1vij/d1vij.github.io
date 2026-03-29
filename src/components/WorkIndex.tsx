@@ -1,12 +1,8 @@
 import type { WorkMetadata } from "@/components/Work";
 import WorkList from "@/components/WorkList";
 
-const { librariesRegistry, librariesOrder } = await import(
-    "@/content/work/librariesRegistry"
-);
-const { projectOrder, projectsRegistry } = await import(
-    "@/content/work/projectRegistry"
-);
+const { librariesRegistry } = await import("@/content/work/librariesRegistry");
+const { projectsRegistry } = await import("@/content/work/projectRegistry");
 
 export default function WorkIndex() {
     const projectMetas = projectsRegistry.metadata as Record<
@@ -19,16 +15,8 @@ export default function WorkIndex() {
     >;
     return (
         <>
-            <WorkList
-                metadatas={projectMetas}
-                title={"Projects"}
-                order={projectOrder}
-            />
-            <WorkList
-                metadatas={librariesMetas}
-                title={"Libraries"}
-                order={librariesOrder}
-            />
+            <WorkList metadatas={projectMetas} title={"Projects"} />
+            <WorkList metadatas={librariesMetas} title={"Libraries"} />
             <div className="mx-auto w-full text-center">
                 <a
                     href="https://github.com/d1vij?tab=repositories"
