@@ -12,11 +12,22 @@ const {
     SiVite,
 } = await import("react-icons/si");
 
+import { Icon } from "@iconify/react";
+
 import * as v from "valibot";
 
 //TODO: Add icons for Seaborn, Matplotlib, TanstackRouter
 
-export const skills = {
+/**
+ * Wraps the value into a function
+ */
+const _ = (v: unknown) => (() => v) as React.ComponentType;
+
+/**
+ * Add new icon components here to automatically use it everywhere icons are used
+ */
+export const icons = {
+    Github: _(<Icon icon={"octicon:mark-github-24"} />),
     // web
     React: FaReact,
     TailwindCSS: SiTailwindcss,
@@ -24,6 +35,7 @@ export const skills = {
     Express: SiExpress,
     HTML: DiHtml5,
     SCSS: FaSass,
+    TanstackRouter: _(<Icon icon={"simple-icons:tanstack"} />),
     // python
     Python: FaPython,
     FastApi: SiFastapi,
@@ -33,12 +45,15 @@ export const skills = {
     Docker: FaDocker,
     MongoDB: DiMongodb,
     Vite: SiVite,
+    Matplotlib: _(<Icon icon="devicon-plain:matplotlib" />),
+    Seaborn: _(<Icon icon="devicon-plain:seaborn" />),
 } as const;
-export default skills;
+export default icons;
+
 export const UnknownSkillSchema = v.pipe(v.string(), v.regex(/^\*.*/));
 
 const KnownSkillSchema = v.picklist(
-    Object.keys(skills) as [keyof typeof skills, ...Array<keyof typeof skills>],
+    Object.keys(icons) as [keyof typeof icons, ...Array<keyof typeof icons>],
 );
 export type KnownSkills = v.InferInput<typeof KnownSkillSchema>;
 

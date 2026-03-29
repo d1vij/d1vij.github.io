@@ -1,5 +1,5 @@
 import * as v from "valibot";
-import skills, { UnknownSkillSchema } from "@/content/skill-icons";
+import icons, { UnknownSkillSchema } from "@/content/icons";
 import type { Icon } from "@/types";
 
 type SkillIconProps = {
@@ -17,7 +17,7 @@ export default function SkillIcons({ skill }: SkillIconProps) {
         skill = skill.slice(1);
     } else {
         //@ts-expect-error
-        Icon = skills[skill];
+        Icon = icons[skill];
     }
     return (
         <span className="group flex w-fit items-center justify-center gap-1 border-2 border-theme-primary-900/50 bg-theme-primary-950 p-1 text-center d:text-sm text-theme-primary-200 text-xs">

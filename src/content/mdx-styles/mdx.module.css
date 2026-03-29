@@ -109,7 +109,6 @@
 
 .paragraph {
     @apply mt-2 mb-2 w-fit;
-    word-break: anywhere;
 
     &:has(.image) {
         width: 100%;
@@ -152,7 +151,7 @@
 
 .list {
     &.list {
-        @apply ml-4;
+        @apply ml-4 mb-2;
     }
 }
 

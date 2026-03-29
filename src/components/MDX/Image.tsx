@@ -35,6 +35,7 @@ export function Image({
             src={src}
             className={cn(
                 "w-full md:w-(--img-md-width)",
+                "mt-1 mb-3",
                 center && "mx-auto",
                 twStyles,
             )}

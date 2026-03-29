@@ -1,8 +1,9 @@
 import { useVibrate } from "@d1vij/shit-i-always-use";
 import { Link, useRouter } from "@tanstack/react-router";
-import { AppWindow, Github, Info } from "lucide-react";
+import { AppWindow, Info } from "lucide-react";
 import * as v from "valibot";
 import SkillIcons from "@/components/SkillIcons";
+import icons from "@/content/icons";
 import type { Icon } from "@/types";
 import type { WorkMetadata } from "../Work/schemas";
 
@@ -79,7 +80,7 @@ function LinkIcon(props: Partial<LinkProps>) {
     let Icon: Icon;
     switch (props.for) {
         case "github":
-            Icon = Github;
+            Icon = icons.Github;
             break;
         case "website":
             Icon = AppWindow;

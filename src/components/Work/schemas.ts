@@ -1,5 +1,5 @@
 import * as v from "valibot";
-import { type ValidSkill, ValidSkillsSchema } from "@/content/skill-icons";
+import { type ValidSkill, ValidSkillsSchema } from "@/content/icons";
 
 export const WorkMetadata = v.object({
     id: v.string(),

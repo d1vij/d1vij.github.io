@@ -8,5 +8,5 @@ export default generateWorkMetadata({
         github: "http://github.com/d1vij/spotify-data-analysis",
         website: "https://d1vij.github.io/spotify-data-analysis/",
     },
-    stack: ["Python", "Pandas", "Numpy", "Jupyter", "*Matplotlib", "*Seaborn"],
+    stack: ["Python", "Pandas", "Numpy", "Jupyter", "Matplotlib", "Seaborn"],
 });

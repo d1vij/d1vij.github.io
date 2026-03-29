@@ -1,9 +1,11 @@
 import { type ElementProps, generateElementsFrom } from "@d1vij/jassm";
-import { Anchor, Header, Image } from "@/components/MDX";
+import { Anchor, Header, Image, InsiteLink, Underline } from "@/components/MDX";
 
 export const Elements = generateElementsFrom(
     {
         Image,
+        InsiteLink,
+        Underline,
         a: Anchor,
         h1: (props: ElementProps<"h1">) => Header({ ...props, level: 1 }),
         h2: (props: ElementProps<"h1">) => Header({ ...props, level: 2 }),

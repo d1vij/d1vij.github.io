@@ -8,4 +8,5 @@ declare module "*.mdx" {
      * could be a React, Preact, or Vuex element.
      */
     export default function MDXContent(props: MDXProps): Element;
+    const a = 10;
 }
