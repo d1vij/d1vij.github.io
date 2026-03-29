@@ -62,7 +62,9 @@ export default function WorkListItem({
                     {skillIcons}
                 </div>
             </div>
-            <div className="flex flex-col gap-1">{linkIcons}</div>
+            <div className="flex flex-col gap-1 md:flex-row-reverse">
+                {linkIcons}
+            </div>
         </div>
     );
 }
@@ -98,10 +100,10 @@ function LinkIcon(props: Partial<LinkProps>) {
             onClick={handleClick}
             to={props.url}
             target={props.for !== "__internal" ? "_blank" : "_self"}
-            className="cursor-pointer px-1"
+            className="cursor-pointer"
             rel="noopener"
         >
-            <Icon className="size-4.5 stroke-theme-primary-400" />
+            <Icon className="size-5.5 stroke-theme-primary-400 md:size-4.5" />
         </Link>
     );
 }

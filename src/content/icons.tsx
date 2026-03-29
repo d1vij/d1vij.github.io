@@ -10,6 +10,7 @@ const {
     SiTailwindcss,
     SiTypescript,
     SiVite,
+    SiGithub,
 } = await import("react-icons/si");
 
 import { Icon } from "@iconify/react";
@@ -27,7 +28,7 @@ const _ = (v: unknown) => (() => v) as React.ComponentType;
  * Add new icon components here to automatically use it everywhere icons are used
  */
 export const icons = {
-    Github: _(<Icon icon={"octicon:mark-github-24"} />),
+    Github: SiGithub,
     // web
     React: FaReact,
     TailwindCSS: SiTailwindcss,
