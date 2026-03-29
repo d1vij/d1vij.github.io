@@ -33,9 +33,13 @@ function App() {
                 </section>
             </div>
 
-            <div className="mx-auto p-5 content-container content-width">
-                <section className="mt-10 md:mt-20 md:text-xl">
-                    <PrimaryText>{"<WIP>"}</PrimaryText>
+            <div className="mx-auto overflow-clip p-5 px-0 content-container content-width">
+                <nav className="flex w-full justify-start gap-4 bg-theme-primary">
+                    <LinkWrapper to={"/work"}>Work</LinkWrapper>
+                    <LinkWrapper to={"/blogs"}>Blogs</LinkWrapper>
+                </nav>
+                <section className="mt-5 text-lg md:mt-5 md:text-xl">
+                    {/*<PrimaryText>{"<WIP>"}</PrimaryText>*/}
                     <PrimaryText>
                         I mostly work with web technologies and python and am
                         currently learning C and Go.
@@ -46,10 +50,6 @@ function App() {
                     </PrimaryText>
                     <PrimaryText>Interested in OSS and Linux.</PrimaryText>
                     <ContactList contacts={contacts} />
-                </section>
-
-                <section className="justify-baseline mt-12 grid w-fit grid-cols-2 bg-theme-primary">
-                    <LinkWrapper to={"/work"}>Work</LinkWrapper>
                 </section>
             </div>
         </main>

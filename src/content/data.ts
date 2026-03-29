@@ -11,7 +11,7 @@ export const contacts: Contact[] = [
     },
     {
         icon: IoMailOutline,
-        content: "leenukhs@gmail.com (alt)",
+        content: "leenukhs@gmail.com(alt)",
         href: "mailto:leenukhs@gmail.com",
     },
     {
