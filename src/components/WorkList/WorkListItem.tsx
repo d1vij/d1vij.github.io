@@ -1,4 +1,4 @@
-import { useVibrate } from "@d1vij/shit-i-always-use";
+import { cn, useVibrate } from "@d1vij/shit-i-always-use";
 import { Link, useRouter } from "@tanstack/react-router";
 import { AppWindow, Info } from "lucide-react";
 import * as v from "valibot";
@@ -6,6 +6,7 @@ import SkillIcons from "@/components/SkillIcons";
 import icons from "@/content/icons";
 import type { Icon } from "@/types";
 import type { WorkMetadata } from "../Work/schemas";
+import styles from "./worklist.module.css";
 
 const LinkIconSchema = v.object({
     for: v.picklist(["github", "website", "__internal"]),
@@ -45,9 +46,14 @@ export default function WorkListItem({
     ];
     const skillIcons = stack.map((s) => <SkillIcons key={s} skill={s} />);
     return (
-        <div className="flex justify-between gap-1 border-2 border-x-0 border-y-theme-primary-900/60 bg-theme-primary p-3 md:border-y-2">
+        <div
+            className={cn(
+                styles.listitem,
+                "flex justify-between gap-1 border-y-theme-primary-900/60 bg-theme-primary p-3",
+            )}
+        >
             {/* links */}
-            <div className="">
+            <div className="w-full">
                 <Link
                     className="font-semibold text-2xl underline decoration-theme-primary-400/60 decoration-dotted hover:decoration-solid md:text-3xl md:decoration-3"
                     to={`/work/$id`}

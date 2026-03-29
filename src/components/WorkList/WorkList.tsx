@@ -1,7 +1,6 @@
 import { cn } from "@d1vij/shit-i-always-use";
 import type { WorkMetadata } from "../Work";
 import WorkListItem from "./WorkListItem";
-import styles from "./worklist.module.css";
 
 type WorkListProps = {
     title: string;
@@ -22,15 +21,15 @@ export default function WorkList({ metadatas, title }: WorkListProps) {
             </h1>
             <div
                 className={cn(
-                    "relative mx-auto grid grid-cols-1 gap-5 overflow-clip border-2 border-x-theme-primary-900/60 border-y-0 md:border-x-2",
+                    "relative mx-auto grid grid-cols-1 overflow-clip border-2 border-x-theme-primary-900/60 border-y-0 md:border-x-2",
                 )}
             >
-                <div
+                {/*<div
                     className={cn(
                         styles.background,
                         "absolute -inset-100 -z-20",
                     )}
-                ></div>
+                ></div>*/}
                 {listElms}
             </div>
         </div>
