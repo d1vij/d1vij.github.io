@@ -4,6 +4,7 @@
     /*--font-primary: "Geist Mono";*/
     /*--font-primary: "Cascadia Code";*/
     --font-primary: "MapleMono";
+    --font-thicc: "Lilita One";
     --default-font-family: var(--font-primary);
 
     --color-theme-primary: #151515;

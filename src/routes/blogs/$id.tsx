@@ -14,6 +14,14 @@ export const Route = createFileRoute("/blogs/$id")({
             id: v.parse(BlogRegistryKeySchema, id),
         }),
     },
+    // head: () => ({
+    //     links: [
+    //         {
+    //             rel: "stylesheet",
+    //             href: "https://fonts.googleapis.com/css2?family=Bowlby+One&display=swap",
+    //         },
+    //     ],
+    // }),
     loader: ({ params: { id } }) => {
         return {
             Component: blogsRegistry.getComponent(id),

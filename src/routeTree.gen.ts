@@ -10,16 +10,24 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as WorkRouteRouteImport } from './routes/work/route'
+import { Route as TagsRouteRouteImport } from './routes/tags/route'
 import { Route as BlogsRouteRouteImport } from './routes/blogs/route'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as WorkIndexRouteImport } from './routes/work/index'
+import { Route as TagsIndexRouteImport } from './routes/tags/index'
 import { Route as BlogsIndexRouteImport } from './routes/blogs/index'
 import { Route as WorkIdRouteImport } from './routes/work/$id'
+import { Route as TagsSlugRouteImport } from './routes/tags/$slug'
 import { Route as BlogsIdRouteImport } from './routes/blogs/$id'
 
 const WorkRouteRoute = WorkRouteRouteImport.update({
   id: '/work',
   path: '/work',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TagsRouteRoute = TagsRouteRouteImport.update({
+  id: '/tags',
+  path: '/tags',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogsRouteRoute = BlogsRouteRouteImport.update({
@@ -37,6 +45,11 @@ const WorkIndexRoute = WorkIndexRouteImport.update({
   path: '/',
   getParentRoute: () => WorkRouteRoute,
 } as any)
+const TagsIndexRoute = TagsIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => TagsRouteRoute,
+} as any)
 const BlogsIndexRoute = BlogsIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -47,6 +60,11 @@ const WorkIdRoute = WorkIdRouteImport.update({
   path: '/$id',
   getParentRoute: () => WorkRouteRoute,
 } as any)
+const TagsSlugRoute = TagsSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => TagsRouteRoute,
+} as any)
 const BlogsIdRoute = BlogsIdRouteImport.update({
   id: '/$id',
   path: '/$id',
@@ -56,27 +74,35 @@ const BlogsIdRoute = BlogsIdRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/blogs': typeof BlogsRouteRouteWithChildren
+  '/tags': typeof TagsRouteRouteWithChildren
   '/work': typeof WorkRouteRouteWithChildren
   '/blogs/$id': typeof BlogsIdRoute
+  '/tags/$slug': typeof TagsSlugRoute
   '/work/$id': typeof WorkIdRoute
   '/blogs/': typeof BlogsIndexRoute
+  '/tags/': typeof TagsIndexRoute
   '/work/': typeof WorkIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/blogs/$id': typeof BlogsIdRoute
+  '/tags/$slug': typeof TagsSlugRoute
   '/work/$id': typeof WorkIdRoute
   '/blogs': typeof BlogsIndexRoute
+  '/tags': typeof TagsIndexRoute
   '/work': typeof WorkIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/blogs': typeof BlogsRouteRouteWithChildren
+  '/tags': typeof TagsRouteRouteWithChildren
   '/work': typeof WorkRouteRouteWithChildren
   '/blogs/$id': typeof BlogsIdRoute
+  '/tags/$slug': typeof TagsSlugRoute
   '/work/$id': typeof WorkIdRoute
   '/blogs/': typeof BlogsIndexRoute
+  '/tags/': typeof TagsIndexRoute
   '/work/': typeof WorkIndexRoute
 }
 export interface FileRouteTypes {
@@ -84,27 +110,41 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/blogs'
+    | '/tags'
     | '/work'
     | '/blogs/$id'
+    | '/tags/$slug'
     | '/work/$id'
     | '/blogs/'
+    | '/tags/'
     | '/work/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/blogs/$id' | '/work/$id' | '/blogs' | '/work'
+  to:
+    | '/'
+    | '/blogs/$id'
+    | '/tags/$slug'
+    | '/work/$id'
+    | '/blogs'
+    | '/tags'
+    | '/work'
   id:
     | '__root__'
     | '/'
     | '/blogs'
+    | '/tags'
     | '/work'
     | '/blogs/$id'
+    | '/tags/$slug'
     | '/work/$id'
     | '/blogs/'
+    | '/tags/'
     | '/work/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BlogsRouteRoute: typeof BlogsRouteRouteWithChildren
+  TagsRouteRoute: typeof TagsRouteRouteWithChildren
   WorkRouteRoute: typeof WorkRouteRouteWithChildren
 }
 
@@ -115,6 +155,13 @@ declare module '@tanstack/react-router' {
       path: '/work'
       fullPath: '/work'
       preLoaderRoute: typeof WorkRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tags': {
+      id: '/tags'
+      path: '/tags'
+      fullPath: '/tags'
+      preLoaderRoute: typeof TagsRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blogs': {
@@ -138,6 +185,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WorkIndexRouteImport
       parentRoute: typeof WorkRouteRoute
     }
+    '/tags/': {
+      id: '/tags/'
+      path: '/'
+      fullPath: '/tags/'
+      preLoaderRoute: typeof TagsIndexRouteImport
+      parentRoute: typeof TagsRouteRoute
+    }
     '/blogs/': {
       id: '/blogs/'
       path: '/'
@@ -151,6 +205,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/work/$id'
       preLoaderRoute: typeof WorkIdRouteImport
       parentRoute: typeof WorkRouteRoute
+    }
+    '/tags/$slug': {
+      id: '/tags/$slug'
+      path: '/$slug'
+      fullPath: '/tags/$slug'
+      preLoaderRoute: typeof TagsSlugRouteImport
+      parentRoute: typeof TagsRouteRoute
     }
     '/blogs/$id': {
       id: '/blogs/$id'
@@ -176,6 +237,20 @@ const BlogsRouteRouteWithChildren = BlogsRouteRoute._addFileChildren(
   BlogsRouteRouteChildren,
 )
 
+interface TagsRouteRouteChildren {
+  TagsSlugRoute: typeof TagsSlugRoute
+  TagsIndexRoute: typeof TagsIndexRoute
+}
+
+const TagsRouteRouteChildren: TagsRouteRouteChildren = {
+  TagsSlugRoute: TagsSlugRoute,
+  TagsIndexRoute: TagsIndexRoute,
+}
+
+const TagsRouteRouteWithChildren = TagsRouteRoute._addFileChildren(
+  TagsRouteRouteChildren,
+)
+
 interface WorkRouteRouteChildren {
   WorkIdRoute: typeof WorkIdRoute
   WorkIndexRoute: typeof WorkIndexRoute
@@ -193,6 +268,7 @@ const WorkRouteRouteWithChildren = WorkRouteRoute._addFileChildren(
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BlogsRouteRoute: BlogsRouteRouteWithChildren,
+  TagsRouteRoute: TagsRouteRouteWithChildren,
   WorkRouteRoute: WorkRouteRouteWithChildren,
 }
 export const routeTree = rootRouteImport
