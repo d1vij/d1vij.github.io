@@ -8,7 +8,6 @@ import { useEffect, useMemo, useRef, useState } from "react";
 // maybe some onclick action can be defined as custom prop or function while loading it client side
 export function Header(
     props: ElementProps<`h${HeaderLevels}`> & {
-        // holy fuck typescript
         level: HeaderLevels;
     },
 ): JSX {

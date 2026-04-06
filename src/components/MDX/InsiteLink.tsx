@@ -1,9 +1,10 @@
+import { useStyles } from "@d1vij/jassm";
 import { Link, type LinkProps } from "@tanstack/react-router";
-import { stylemap } from "@/content/mdx-styles/mdx.styles";
 
 export function InsiteLink(props: LinkProps) {
+    const styles = useStyles();
     return (
-        <Link {...props} className={stylemap.anchor}>
+        <Link {...props} className={styles.anchor}>
             {props.children}
         </Link>
     );

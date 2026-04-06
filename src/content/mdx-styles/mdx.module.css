@@ -117,10 +117,12 @@
 
     &:before {
         position: absolute;
-        left: -0.5rem;
+        left: -0.55rem;
         top: -0.75rem;
         content: "*";
         color: orangered;
+        background-color: var(--color-theme-primary);
+        @apply p-0 px-1 rounded-2xl text-sm;
     }
 
     .blockquote {
