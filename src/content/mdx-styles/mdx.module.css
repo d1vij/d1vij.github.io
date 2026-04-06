@@ -99,7 +99,7 @@
 .preformatted {
     border: solid 2px var(--color-theme-primary-800);
     background-color: --alpha(var(--color-theme-primary-800) / 20%);
-    @apply p-3 my-3 rounded-md w-full overflow-auto;
+    @apply p-3 mb-3 rounded-b-md w-full overflow-auto;
 
     &:has(+ .preformatted) {
         @apply mb-2;
