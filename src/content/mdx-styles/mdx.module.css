@@ -1,14 +1,8 @@
 @reference "tailwindcss";
 
-:root {
-    --blockquote-color: rgba(from var(--color-light-shade-green) r g b / 20%);
-}
-
 .header {
-    @apply w-full font-semibold cursor-pointer;
-    @apply mt-4 mb-2 tracking-tight;
+    @apply w-full font-semibold cursor-pointer tracking-tight;
     @apply underline decoration-2 decoration-dotted;
-
     text-decoration-color: rgba(
         from var(--color-theme-primary-800) r g b /
         70%
@@ -19,24 +13,36 @@
     }
 }
 
+.header_1 {
+    @apply mt-12 mb-3 text-[2.5em];
+}
+
+.header_2 {
+    @apply mt-10 mb-2 text-[2.2em];
+}
+
+.header_3 {
+    @apply mt-8 mb-2 text-[1.875em];
+}
+
+.header_4 {
+    @apply mt-6 mb-1.5 text-[1.5em];
+}
+
+.header_5 {
+    @apply mt-5 mb-1 text-[1.25em];
+}
+
+.header_6 {
+    @apply mt-4 mb-1 text-[1.125em];
+}
+
 .header_button {
-    @apply w-full flex justify-start items-baseline text-start relative;
-    @apply leading-10;
+    @apply w-full flex justify-start items-baseline text-start relative leading-10;
     display: block;
     cursor: pointer;
     border: none;
     font-size: inherit;
-
-    /*&::after {
-        content: "#";
-        @apply absolute right-0 top-0;
-        color: rgba(from var(--color-theme-primary-900) r g b / 80%);
-    }*/
-
-    /*uncommment if we ever need the bad looking hyphenation*/
-    /*hyphens: auto;*/
-
-    /*and comment this*/
     overflow-wrap: anywhere;
 
     &:hover {
@@ -44,37 +50,35 @@
     }
 }
 
-.header_1 {
-    font-size: 2.5em;
+.paragraph {
+    @apply mb-3 max-w-prose;
+
+    &:has(+ .paragraph) {
+        @apply mt-2 mb-0;
+    }
+
+    &:has(.image) {
+        width: 100%;
+    }
 }
 
-.header_2 {
-    font-size: 2.2em;
+.bold {
+    @apply font-bold;
+    color: var(--color-theme-primary-50);
 }
 
-.header_3 {
-    font-size: 1.875em;
+.italic {
+    @apply italic;
 }
 
-.header_4 {
-    font-size: 1.5em;
-}
-
-.header_5 {
-    font-size: 1.25em;
-}
-
-.header_6 {
-    font-size: 1.125em;
-}
-
-.header_icon {
-    /**/
+.striked {
+    @apply line-through decoration-2 decoration-wavy;
+    text-decoration-color: var(--color-light-shade-red);
 }
 
 .anchor {
     --color: hsla(from var(--color-light-secondary) h s calc(l - 40));
-    @apply underline hover:decoration-solid decoration-2 decoration-dotted italic;
+    @apply underline decoration-2 decoration-dotted italic px-0.5;
     @apply transition-colors duration-150 ease-out;
     text-decoration-color: var(--color);
 
@@ -84,72 +88,62 @@
     }
 }
 
-.button {
-    /**/
-}
-
-.bold {
-    @apply font-bold;
-
-    color: var(--color-theme-primary-50);
-}
-
-.italic {
-    @apply italic;
-}
-
-.span {
-    /**/
-}
-
-.striked {
-    @apply line-through decoration-2 decoration-wavy;
-    text-decoration-color: var(--color-light-shade-red);
-}
-
-.paragraph {
-    @apply mt-2 mb-2 w-fit;
-
-    &:has(.image) {
-        width: 100%;
-    }
-}
-
 .code {
-    --color: var(--color-theme-primary-400);
-    @apply outline-1 w-full;
-    @apply p-0 px-1;
-    font-family: var(--font-monospace);
-    outline-color: rgba(from var(--color) r g b / 40%);
+    --color: var(--color-theme-primary-700);
+    @apply px-1.5 py-0.5 rounded;
+    outline: 1px solid rgba(from var(--color) r g b / 40%);
     background-color: rgba(from var(--color) r g b / 20%);
+    font-family: var(--font-primary);
 }
 
 .preformatted {
-    @apply bg-gray-300;
-    @apply font-mono p-2 border mb-2 w-full overflow-y-scroll;
+    border: solid 2px var(--color-theme-primary-800);
+    background-color: --alpha(var(--color-theme-primary-800) / 20%);
+    @apply p-3 my-3 rounded-md w-full overflow-auto;
+
+    &:has(+ .preformatted) {
+        @apply mb-2;
+    }
 
     .code {
-        @apply bg-inherit outline-none p-0 text-sm;
+        @apply bg-transparent outline-none p-0 text-sm;
     }
 }
 
 .blockquote {
-    background-color: var(--blockquote-color);
-    border-color: hsl(from var(--blockquote-color) h s calc(l - 60));
-    @apply p-2;
-    @apply border-l-4 border;
+    position: relative;
+    @apply my-4 px-3 py-2 rounded-md;
+    background-color: --alpha(var(--color-theme-primary-400) / 10%);
+
+    &:before {
+        position: absolute;
+        left: -0.5rem;
+        top: -0.75rem;
+        content: "*";
+        color: orangered;
+    }
+
+    .blockquote {
+        @apply mt-2 mx-1;
+
+        &:before {
+            content: none;
+        }
+    }
 }
 
 .horizontal_line {
-    @apply mt-5 mb-5 border-t-2 border-dotted;
+    @apply my-6 border-t-2 border-dotted;
     border-color: var(--color-theme-primary-800);
 }
 
 .image {
-    @apply size-full aspect-auto min-w-80;
+    @apply my-4 rounded-md w-full min-w-80;
 }
 
 .list {
+    @apply mt-3 mb-3 pl-5;
+
     &.list {
         @apply ml-4 mb-2;
     }
@@ -164,11 +158,11 @@
 }
 
 .list_item {
-    /**/
+    @apply mb-1.5;
 }
 
 .table {
-    @apply border-2 rounded;
+    @apply my-4 border-2 rounded overflow-hidden;
 
     &,
     * {
@@ -176,49 +170,13 @@
     }
 }
 
-.table_head {
-    /**/
-}
-
 .table_head_cell {
-    @apply p-1 border-2 text-center;
+    @apply px-3 py-2 border-2 text-center;
     background-color: var(--color-light-secondary);
 }
 
-.table_body {
-    /**/
-}
-
-.table_row {
-    /**/
-}
-
 .table_data {
-    @apply p-1 border text-center;
-}
-
-.table_action_button {
-    @apply cursor-pointer;
-
-    &:hover {
-        background-color: var(--color-light-secondary);
-    }
-
-    &:active {
-        @apply bg-green-200;
-    }
-}
-
-.table_action_button_csv {
-}
-
-.table_action_button_html {
-}
-
-.table_action_button_json {
-}
-
-.table_action_button_markdown {
+    @apply px-3 py-2 border text-center;
 }
 
 .table_container {
@@ -227,12 +185,9 @@
 }
 
 .table_action_buttons_summary {
-    @apply w-fit;
-    @apply border-2 p-1 px-2.5 cursor-pointer text-center;
+    @apply w-fit border-2 px-2.5 py-1 cursor-pointer text-center grid grid-cols-2;
     border-color: var(--color-light-border);
     background-color: var(--color-light-secondary);
-
-    @apply grid grid-cols-2;
 
     &::marker {
         content: none;
@@ -240,8 +195,7 @@
 }
 
 .table_action_buttons_details {
-    @apply flex-col items-end text-center;
-    @apply translate-x-full;
+    @apply flex-col items-end text-center translate-x-full;
     position: absolute;
     background-color: var(--color-light-primary);
     right: 0;
@@ -249,8 +203,7 @@
 
     button {
         display: block;
-        @apply p-1;
-        @apply border-2 w-full;
+        @apply px-2 py-1 border-2 w-full;
     }
 
     &:open {
@@ -271,5 +224,6 @@
     }
 }
 
-.separator {
+.button {
+    @apply px-3 py-1.5 rounded-md;
 }

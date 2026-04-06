@@ -15,8 +15,10 @@ export default function WorkIndex() {
     >;
     return (
         <>
-            <WorkList metadatas={projectMetas} title={"Projects"} />
-            <WorkList metadatas={librariesMetas} title={"Libraries"} />
+            <div className="space-y-8 pt-1">
+                <WorkList metadatas={projectMetas} title={"Projects"} />
+                <WorkList metadatas={librariesMetas} title={"Libraries"} />
+            </div>
             <div className="mx-auto w-full text-center">
                 <a
                     href="https://github.com/d1vij?tab=repositories"

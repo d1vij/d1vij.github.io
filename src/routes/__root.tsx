@@ -13,7 +13,7 @@ function RootComponent() {
     return (
         <>
             <HeadContent />
-            <div className="grow">
+            <div className="flex size-full grow">
                 <Outlet />
             </div>
             <footer className="left-0 z-20 w-full pb-2 text-center text-sm decoration-2 brightness-50">

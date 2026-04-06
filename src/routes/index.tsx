@@ -19,8 +19,8 @@ import styles from "./homepage.module.css";
 
 function App() {
     return (
-        <main className="relative z-20 bg-transparent">
-            <div className="relative p-5 px-4! md:p-10">
+        <main className="relative z-20 w-full bg-transparent">
+            <div className="relative mx-auto p-5 px-4! md:p-10">
                 <div className={styles.backdrop}></div>
                 <section className="relative z-20 flex flex-col content-container content-container md:mx-auto">
                     <h1 className="text-start text-8xl uppercase leading-tighter tracking-tighter md:text-9xl">

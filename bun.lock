@@ -108,7 +108,7 @@
 
     "@d1vij/jassm": ["@d1vij/jassm@0.1.24", "", { "peerDependencies": { "@d1vij/shit-i-always-use": "^0.1.9", "@mdx-js/rollup": "^3.1.1", "react": "^19.2.4", "react-dom": "^19.2.4", "remark-gfm": "^4.0.1" } }, "sha512-XI2cXvFD5pgkCxBjhUKv6cAsHJfK8at29u48m31svErUULGIkPCvopZEOCBRzcu6TXio0XtzaTA8ncaflWIVrg=="],
 
-    "@d1vij/shit-i-always-use": ["@d1vij/shit-i-always-use@0.1.14", "", { "dependencies": { "clsx": "^2.1.1", "nanoid": "^5.1.6", "tailwind-merge": "^3.5.0" }, "peerDependencies": { "react": "^18.0.0 || ^19.0.0", "react-dom": "^18.0.0 || ^19.0.0", "typescript": ">=4.5.0" }, "optionalPeers": ["typescript"] }, "sha512-cifP7FplQIfdEWGoFKFjGjlnBlgntIQBBeTObygjPzyIRQFjXzveypsySYa7b+pE/oEM5B//rlOZuPDtN9lZog=="],
+    "@d1vij/shit-i-always-use": ["@d1vij/shit-i-always-use@0.1.15", "", { "dependencies": { "clsx": "^2.1.1", "nanoid": "^5.1.6", "tailwind-merge": "^3.5.0" }, "peerDependencies": { "react": "^18.0.0 || ^19.0.0", "react-dom": "^18.0.0 || ^19.0.0", "typescript": ">=4.5.0" }, "optionalPeers": ["typescript"] }, "sha512-vr0nofGYgvjl4dLRjEmYhw5BRZ4cmfvCmZ9nKJmn20JJSZ8Kpb/nYDiV5gACAuO6wb8djRcA9YdHxMUZ6f5skQ=="],
 
     "@emnapi/core": ["@emnapi/core@1.9.0", "", { "dependencies": { "@emnapi/wasi-threads": "1.2.0", "tslib": "^2.4.0" } }, "sha512-0DQ98G9ZQZOxfUcQn1waV2yS8aWdZ6kJMbYCJB3oUBecjWYO1fqJ+a1DRfPF3O5JEkwqwP1A9QEN/9mYm2Yd0w=="],
 

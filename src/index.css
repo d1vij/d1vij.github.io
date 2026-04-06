@@ -4,6 +4,10 @@
     @apply bg-theme-primary-500/40;
 }
 
+* {
+    scroll-behavior: smooth;
+}
+
 html {
     font-size: 18px;
 

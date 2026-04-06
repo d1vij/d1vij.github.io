@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { lazy } from "react";
-
-export const Route = createFileRoute("/work")({
+export const Route = createFileRoute("/blogs")({
     component: lazy(() => import("@/components/GoBackLayout")),
 });

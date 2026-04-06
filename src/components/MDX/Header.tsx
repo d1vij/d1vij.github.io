@@ -50,8 +50,8 @@ export function Header(
             .toLowerCase()
             .replace(/[^a-z0-9\s-]/g, "") // remove illegal chars
             .trim()
-            .replace(/\s+/g, "-")
-            .slice(0, 30);
+            .replace(/\s+/g, "-");
+        // .slice(0, 30);
 
         setHash(safe);
     }, []);

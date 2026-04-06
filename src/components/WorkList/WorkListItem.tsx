@@ -49,7 +49,7 @@ export default function WorkListItem({
         <div
             className={cn(
                 styles.listitem,
-                "flex justify-between gap-1 border-y-theme-primary-900/60 bg-theme-primary p-3",
+                "flex justify-between gap-1 border-y-theme-primary-900/60 bg-theme-primary p-4",
             )}
         >
             {/* links */}
@@ -61,7 +61,7 @@ export default function WorkListItem({
                 >
                     {title}
                 </Link>
-                <p className="mt-2 mb-2 w-[90%] text-sm text-theme-primary-400 md:mb-3 md:text-base">
+                <p className="mt-4 mb-2 w-[90%] text-sm text-theme-primary-400 md:mb-3 md:text-base">
                     {description}
                 </p>
                 <div className="flex flex-wrap gap-1 md:gap-2">
