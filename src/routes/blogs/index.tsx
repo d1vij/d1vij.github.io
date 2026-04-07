@@ -13,6 +13,5 @@ function RouteComponent() {
             </div>
         );
     }
-    // TODO: Blogggggs
     return <div>Hello "/blogs/"!</div>;
 }
