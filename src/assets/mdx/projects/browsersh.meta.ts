@@ -3,7 +3,7 @@ import { generateWorkMetadata } from "@/components/Work";
 export default generateWorkMetadata({
     id: "browsersh",
     title: "BrowserSH",
-    description: "",
+    description: "Emulating UNIX like shell in browser.",
     stack: ["TypeScript", "HTML", "SCSS"],
     links: {
         github: "https://github.com/d1vij/BrowserSH",

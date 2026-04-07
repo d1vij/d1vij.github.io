@@ -51,7 +51,7 @@
 }
 
 .paragraph {
-    @apply mb-3 max-w-prose;
+    @apply mb-3 mt-3 max-w-prose;
 
     &:has(+ .paragraph) {
         @apply mt-2 mb-0;
