@@ -39,16 +39,17 @@ function App() {
                     <LinkWrapper to={"/blogs"}>Blogs</LinkWrapper>
                 </nav>
                 <section className="mt-5 text-lg md:mt-5 md:text-xl">
-                    {/*<PrimaryText>{"<WIP>"}</PrimaryText>*/}
                     <PrimaryText>
-                        I mostly work with web technologies and python and am
-                        currently learning C and Go.
+                        I mainly work with web technologies such as React,
+                        Svelte, and TypeScript, along with Python, and
+                        occasionally use lower-level languages like C and Go. I
+                        spend most of my time building websites or creating
+                        tools and libraries around them.
                     </PrimaryText>
                     <PrimaryText>
-                        Majorly working with web technologies and python along
-                        with occasional C and Go,
+                        In my free time, I like experimenting with Linux,
+                        networking, and running my own homelab.
                     </PrimaryText>
-                    <PrimaryText>Interested in OSS and Linux.</PrimaryText>
                     <ContactList contacts={contacts} />
                 </section>
             </div>
