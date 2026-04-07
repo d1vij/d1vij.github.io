@@ -1,0 +1,1 @@
+import{r as e}from"./useNavigate-CEbPVeUX.js";function t(t){return e({from:t.from,strict:t.strict,structuralSharing:t.structuralSharing,select:e=>t.select?t.select(e.loaderData):e.loaderData})}export{t};

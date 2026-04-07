@@ -1,0 +1,1 @@
+import{n as e}from"./chunk-B3K2TuZy.js";import"./react-DQlYdkDi.js";import{t}from"./jsx-runtime-1LQxQxZH.js";import{t as n}from"./compiler-runtime-XV_VgFlb.js";var r=n(),i=e(t());function a(){let e=(0,r.c)(1),t;return e[0]===Symbol.for(`react.memo_cache_sentinel`)?(t=(0,i.jsx)(`div`,{children:`Hello "/tags/"!`}),e[0]=t):t=e[0],t}export{a as component};
