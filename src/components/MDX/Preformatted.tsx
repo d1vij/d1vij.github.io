@@ -8,7 +8,7 @@ import {
 import { title } from "radashi";
 import { createContext, useRef, useState } from "react";
 
-export const languageMap = {
+const languageMap = {
     ts: "TypeScript",
     py: "Python",
     js: "JavaScript",
@@ -19,7 +19,7 @@ export const languageMap = {
 /**
  * Returns titlecased full name of a language from its short name / extension
  */
-function getLongName(short: string): string {
+export function getLongName(short: string): string {
     return languageMap[short as keyof typeof languageMap] ?? title(short);
 }
 

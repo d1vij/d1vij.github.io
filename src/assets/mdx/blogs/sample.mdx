@@ -1,4 +1,3 @@
-
 > MDX has (almost) all features of normal markdown
 >
 > Asdasd
@@ -6,15 +5,15 @@
 > > asd
 > > asd
 > > asd
+> >
 > > ```
 > > p
 > > *asd*
 > > ```
+> >
 > > asd
 >
->
 > Asdasd
-
 
 ## Headers
 
@@ -82,8 +81,6 @@ import Sample from "@/components/Sample"
 <Sample text={"this is it being directly imported into the mdx file"/> <Sample text={"this is it being directly imported into the mdx file"/>
 ```
 
-
-
 2. We define it globally by adding it to the global `Elements` map object
    - Goto _/src/content/registry.ts_
    - Import and add the element component to the object passed to `generateElementsFrom` function, and then directly reference that component here
@@ -119,7 +116,6 @@ import {value} from "@/components/Sample"
 
 Imported value is {value}
 ```
-
 
 2. Exporting something from the mdx file into a mdx file
 
