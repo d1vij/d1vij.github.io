@@ -1,0 +1,3 @@
+import{n as e}from"./chunk-B3K2TuZy.js";import{t}from"./jsx-runtime-1LQxQxZH.js";var n=e(t());function r(e){let t={p:`p`,...e.components},{Image:r}=t;return r||a(`Image`,!0),(0,n.jsxs)(n.Fragment,{children:[(0,n.jsx)(t.p,{children:`Created a data analysis and visualizations of results of intraschoool's council using part of a high school project.`}),`
+`,(0,n.jsx)(r,{src:`/assets/eva-chart1-BiincsiF.png`,widthRem:80}),`
+`,(0,n.jsx)(r,{src:`/assets/eva-heatmap-CEJOtuG_.png`,widthRem:80})]})}function i(e={}){let{wrapper:t}=e.components||{};return t?(0,n.jsx)(t,{...e,children:(0,n.jsx)(r,{...e})}):r(e)}function a(e,t){throw Error(`Expected `+(t?`component`:`object`)+" `"+e+"` to be defined: you likely forgot to import, pass, or provide it.")}export{i as default};
